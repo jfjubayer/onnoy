@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - অন্বয় Onnoy</title>
+    <!-- PAGE: support.html | PHASE: 1 | STATUS: completed -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .form-control {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px var(--green-pale);
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--ink-mid);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">অন্বয় Onnoy</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="modules.html">Modules</a>
+                <a href="courses.html">Courses</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- 1. Page Hero -->
+    <header class="hero">
+        <div class="container fade-in">
+            <h1>🛡️ আমরা আছি / We're Here</h1>
+            <p>You don't have to face this alone. Reach out to Onnoy — everything you share stays between us.</p>
+        </div>
+    </header>
+
+    <div class="container section-gap">
+        
+        <!-- Empathy Message Box -->
+        <div style="max-width: 650px; margin: 0 auto 30px auto; background: var(--green-pale); border-radius: var(--radius); padding: 25px; color: var(--ink-mid); font-size: 1.1rem; line-height: 1.6; border-left: 4px solid var(--green);">
+            Whether it's a photo shared without permission, a rumor spread online, or ongoing harassment — what happened to you is not your fault. We are here to listen and help where we can.
+        </div>
+
+        <!-- Form Section -->
+        <div style="max-width: 650px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <form action="https://formspree.io/f/xaqvvobg" method="POST">
+                
+                <input type="hidden" name="_subject" value="Onnoy Student Support Request">
+                
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="You can leave this blank if you prefer">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact" class="form-label">Your Email or Phone <span class="text-amber">*</span></label>
+                    <input type="text" id="contact" name="contact" class="form-control" placeholder="We'll reach out to you here" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue" class="form-label">What happened? <span class="text-amber">*</span></label>
+                    <select id="issue" name="issue" class="form-control" required style="appearance: auto; cursor: pointer; background-color: var(--white);">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="My photo or video was shared without my permission">My photo or video was shared without my permission</option>
+                        <option value="I am being harassed online">I am being harassed online</option>
+                        <option value="A rumor is being spread about me">A rumor is being spread about me</option>
+                        <option value="I need advice about something online">I need advice about something online</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="content" class="form-label">Tell us what's going on <span class="text-amber">*</span></label>
+                    <textarea id="content" name="content" class="form-control" rows="8" placeholder="Share as much or as little as you're comfortable with. We will read every word." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="time" class="form-label">When did this happen?</label>
+                    <input type="text" id="time" name="time" class="form-control" placeholder="e.g. last week, a few days ago...">
+                </div>
+
+                <button type="submit" class="btn btn-green" style="width: 100%; margin-top: 15px; font-size: 1.1rem; padding: 15px;">Send Message to Onnoy &rarr;</button>
+
+            </form>
+        </div>
+
+        <!-- Reassurance Strip -->
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; font-weight: bold; color: var(--ink-mid); text-align: center;">
+            <div>🔒 Everything is confidential</div>
+            <div>👤 You can stay anonymous</div>
+            <div>💚 No judgment, ever</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>অন্বয় — Onnoy | Connecting necessary dots</p>
+        <p>Mymensingh, Bangladesh · Ethical Use of Technology Program</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
