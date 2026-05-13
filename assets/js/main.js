@@ -5,22 +5,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     }
 
-    // Mobile dropdown toggle
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.dropdown');
-    
-    if (dropdownToggle && window.innerWidth <= 768) {
-        dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle('show');
-        });
-    }
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const menu = this.closest('.dropdown').querySelector('.dropdown-menu');
+          // Close all other open dropdowns first
+          document.querySelectorAll('.dropdown-menu.open').forEach(m => {
+            if (m !== menu) m.classList.remove('open');
+          });
+          menu.classList.toggle('open');
+        }
+      });
+    });
+
+    document.querySelectorAll('.dropdown-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768 && navLinks) {
+          navLinks.classList.remove('open');
+          document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (navLinks && !e.target.closest('.navbar')) {
+        navLinks.classList.remove('open');
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+      }
+    });
 
     // Active nav link highlight based on current page
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
