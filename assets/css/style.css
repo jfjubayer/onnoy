@@ -480,3 +480,70 @@ textarea.form-control {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Navbar Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 240px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--green);
+    border-radius: 0 0 var(--radius) 0;
+    padding: 10px 0;
+    z-index: 1001;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--ink-mid);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+.dropdown-menu a:hover {
+    color: var(--green);
+    background-color: var(--green-pale);
+}
+/* Desktop hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+/* Mobile Dropdown */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-left: 2px solid var(--green);
+        border-radius: 0;
+        margin-left: 15px;
+        margin-top: 10px;
+        display: none;
+    }
+    .dropdown.show .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Pill Button Amber */
+.btn-pill-amber {
+    background-color: var(--amber);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-pill-amber:hover {
+    background-color: #d4951a;
+    color: var(--white) !important;
+}

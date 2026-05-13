@@ -89,27 +89,21 @@
             color: var(--ink-mid);
             margin-bottom: 20px;
         }
-        .download-btn {
-            background-color: var(--green);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
+        .coming-soon-badge {
             display: inline-block;
-            transition: all 0.2s;
+            background-color: var(--amber);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
             margin-bottom: 15px;
+            font-size: 0.95rem;
         }
-        .download-btn:hover {
-            background-color: var(--green-light);
-        }
-        .coming-soon-text {
-            font-size: 0.85rem;
+        .download-box p {
             color: var(--ink-mid);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         .email-form {
             display: flex;
@@ -165,17 +159,22 @@
             <a href="index.html" class="logo">অন্বয় Onnoy</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
                 <a href="modules.html">Modules</a>
-                <a href="courses.html">Courses</a>
-                <a href="resources.html">Resources</a>
+                <div class="dropdown">
+                    <a href="resources.html" class="dropdown-toggle">Resources ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="fact-check.html">→ Is This True?</a>
+                        <a href="support.html">→ Need Help?</a>
+                        <a href="quiz.html">→ Safety Quiz</a>
+                        <a href="checklist.html">→ Misinformation Checklist</a>
+                        <a href="resources-library.html">→ Resource Library</a>
+                        <a href="stories.html">→ Student Stories</a>
+                        <a href="facilitator-guide.html">→ Facilitator Guide</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href="session-request.html" class="text-amber">Request a Session</a>
-                <a href="quiz.html">Quiz</a>
-                <a href="checklist.html">Checklist</a>
-                <a href="resources-library.html">Resource Library</a>
-                <a href="stories.html">Stories</a>
-                <a href="facilitator-guide.html">Facilitator Guide</a>
+                <a href="session-request.html" class="btn-pill-amber">Request a Session</a>
             </div>
             <button class="hamburger">☰</button>
         </div>
@@ -225,8 +224,8 @@
             <div class="download-icon">📄</div>
             <div class="download-title">Onnoy Facilitator Guide — Version 1.0</div>
             <div class="download-subtitle">PDF · Free · Bengali & English</div>
-            <a href="assets/facilitator-guide.pdf" class="download-btn">Download Free Guide →</a>
-            <div class="coming-soon-text">PDF coming soon — enter your email to be notified when it's ready</div>
+            <div class="coming-soon-badge">📄 PDF Guide — Coming Soon</div>
+            <p>The facilitator guide is being prepared. Enter your email below to get notified the moment it's ready.</p>
             
             <form action="https://formspree.io/f/xaqvvobg" method="POST" class="email-form">
                 <input type="email" name="email" class="email-input" placeholder="Your email address" required>

@@ -11,6 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile dropdown toggle
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+    
+    if (dropdownToggle && window.innerWidth <= 768) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle('show');
+        });
+    }
+
     // Active nav link highlight based on current page
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navItems = document.querySelectorAll('.nav-links a');
