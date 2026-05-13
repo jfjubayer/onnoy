@@ -355,6 +355,19 @@ footer p {
     opacity: 0.8;
     margin: 5px 0;
 }
+.footer-links {
+    margin: 10px 0 0;
+}
+.footer-links a {
+    color: var(--white);
+    opacity: 0.75;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.footer-links a:hover {
+    opacity: 1;
+}
 
 /* Form Styles */
 .form-group {
