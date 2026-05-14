@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentLang = localStorage.getItem('onnoy_lang') || 'en';
         
         const updateLanguage = (lang) => {
+            document.documentElement.setAttribute('lang', lang);
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[key] && translations[key][lang]) {
+                if (translations[key] && translations[key][lang] !== undefined) {
                     el.textContent = translations[key][lang];
                 }
             });
@@ -115,4 +116,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
         observer.observe(el);
     });
+
 });

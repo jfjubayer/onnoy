@@ -64,4 +64,5 @@ const translations = {
   "modules-subtitle": { "en": "Step-by-step guides to digital responsibility", "bn": "ডিজিটাল দায়িত্বশীলতার ধাপে ধাপে নির্দেশিকা" },
   "res-title": { "en": "Resources", "bn": "রিসোর্স" },
   "res-subtitle": { "en": "Tools and guides for a safer digital life", "bn": "নিরাপদ ডিজিটাল জীবনের জন্য সরঞ্জাম এবং নির্দেশিকা" },
+  "facilitator-subtitle": { "en": "", "bn": "সেশন পরিচালনার গাইড" }
 };

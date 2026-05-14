@@ -250,6 +250,15 @@ a {
     justify-content: center;
     gap: 20px;
 }
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: #FFFFFF !important;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+.hero-buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF !important;
+}
 .hero h1, .hero h2, .hero p, .hero span { color: #ffffff !important; }
 
 /* Buttons */
@@ -271,6 +280,13 @@ a {
 .btn-green:hover {
     background-color: var(--green-light);
 }
+.btn-amber {
+    background-color: var(--amber);
+    color: #FFFFFF;
+}
+.btn-amber:hover {
+    background-color: #d4951a;
+}
 .btn-outline {
     background-color: transparent;
     color: #FFFFFF;
@@ -279,6 +295,13 @@ a {
 .btn-outline:hover {
     background-color: var(--white);
     color: var(--green);
+}
+.btn-secondary {
+    background-color: var(--ink-light);
+    color: #FFFFFF;
+}
+.btn-secondary:hover {
+    background-color: var(--ink);
 }
 .full-width {
     width: 100%;
@@ -1876,4 +1899,12 @@ html { scroll-behavior: smooth; }
 }
 [data-theme="dark"] .btn-green:hover {
     background-color: #3DAB65;
+}
+
+/* Language Toggles */
+html[lang="en"] .bn-only {
+    display: none !important;
+}
+html[lang="bn"] .en-only {
+    display: none !important;
 }
