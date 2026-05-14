@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit a link, post, or message to Onnoy for verification. We help students in Bangladesh distinguish between real information and online rumors.">
+    <meta name="keywords" content="fact check, verify news, online rumors, Onnoy, Bangladesh, digital literacy">
+    <meta property="og:title" content="Fact-Check — Verify Information with Onnoy">
+    <meta property="og:description" content="Submit suspicious links or messages to Onnoy for verification.">
+    <meta property="og:image" content="https://onnoy.vercel.app/assets/images/og-image.png">
+    <meta property="og:url" content="https://onnoy.vercel.app/fact-check.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fact-Check — Verify Information with Onnoy">
+    <meta name="twitter:description" content="Submit suspicious links or messages for verification.">
+    <meta name="twitter:image" content="https://onnoy.vercel.app/assets/images/og-image.png">
+    <link rel="canonical" href="https://onnoy.vercel.app/fact-check.html">
+    <title>Fact-Check - Onnoy-অন্বয়</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader"></div>
+    </div>
+
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo" data-i18n="nav-logo">Onnoy-অন্বয়</a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">Home</a>
+      <div class="dropdown">
+        <a class="dropdown-toggle" href="modules.html" data-i18n="nav-modules">Modules</a>
+        <div class="dropdown-menu">
+          <a href="module-1.html">📱 Responsible Tech Use</a>
+          <a href="module-2.html">🌐 Digital Responsibility</a>
+          <a href="module-3.html">✏️ Academic Honesty</a>
+          <div class="divider"></div>
+          <a href="modules.html">📋 All Modules</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a class="dropdown-toggle" href="resources.html" data-i18n="nav-resources">Resources</a>
+        <div class="dropdown-menu">
+          <a href="fact-check.html">🔍 Is This True?</a>
+          <a href="support.html">🛡️ Need Help?</a>
+          <a href="quiz.html">🧠 Safety Quiz</a>
+          <a href="checklist.html">🚩 Misinformation Checklist</a>
+          <a href="resources-library.html">📚 Resource Library</a>
+          <a href="stories.html">📖 Student Stories</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a class="dropdown-toggle" href="faq.html" data-i18n="nav-learn">Learn</a>
+        <div class="dropdown-menu">
+          <a href="faq.html">❓ FAQ</a>
+          <a href="scenario-cards.html">🎴 Scenario Cards</a>
+          <a href="facilitator-guide.html">👩‍🏫 Facilitator Guide</a>
+          <a href="courses.html">🎓 Courses</a>
+        </div>
+      </div>
+      <a href="about.html" data-i18n="nav-about">About</a>
+      <a href="contact.html" data-i18n="nav-contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="session-request.html" class="nav-cta" data-i18n="nav-cta">Request a Session</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="Toggle navigation">☰</button>
+  </div>
+</nav>
+
+    <header class="hero">
+        <div class="container fade-in">
+            <h1>🔍 Is This True?</h1>
+            <p>সন্দেহজনক তথ্য যাচাই করুন</p>
+            <p>Seen something online and not sure if it's true? Send it to us. Our team will verify it and get back to you.</p>
+        </div>
+    </header>
+
+    <section class="section-gap container">
+        <h2 class="section-title text-center">How It Works</h2>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 50px;">
+            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">1</div>
+                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">Paste the link or message below</div>
+            </div>
+            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">2</div>
+                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">Our team researches and verifies</div>
+            </div>
+            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">3</div>
+                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">We reply to your email with what we found</div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div style="max-width: 650px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <form action="https://formspree.io/f/xwvyyoqr" method="POST">
+                
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Optional — you can stay anonymous">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Your Email <span class="text-amber">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="We'll reply here" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="source" class="form-label">Where did you see this? <span class="text-amber">*</span></label>
+                    <select id="source" name="source" class="form-control" required style="appearance: auto; cursor: pointer; background-color: var(--white);">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="News website">News website</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="content" class="form-label">Paste the content or describe it <span class="text-amber">*</span></label>
+                    <textarea id="content" name="content" class="form-control" rows="6" placeholder="Paste the message, post, or describe what you saw..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="link" class="form-label">Link to the post</label>
+                    <input type="text" id="link" name="link" class="form-control" placeholder="https://... (if you have one)">
+                </div>
+
+                <button type="submit" class="btn btn-green" style="width: 100%; margin-top: 15px; font-size: 1.1rem; padding: 15px;">Send for Verification &rarr;</button>
+            </form>
+
+            <!-- Reassurance Note -->
+            <div style="background: var(--green-pale); border-radius: var(--radius); padding: 25px; color: var(--ink-mid); text-align: center; margin-top: 35px; font-size: 0.95rem; line-height: 1.6; border-left: 4px solid var(--green);">
+                Your submission is reviewed by the Onnoy team — real people, not a bot. We do not share your name or email with anyone. This is a free service for students.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+  <p data-i18n="footer-tagline">Onnoy-অন্বয় | Connecting necessary dots</p>
+  <p data-i18n="footer-address">Mymensingh, Bangladesh · Ethical Use of Technology Program</p>
+  <p class="footer-links">
+    <a href="faq.html">FAQ</a> ·
+    <a href="scenario-cards.html">Scenario Cards</a> ·
+    <a href="facilitator-guide.html">Facilitator Guide</a> ·
+    <a href="contact.html">Contact</a>
+  </p>
+</footer>
+
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
