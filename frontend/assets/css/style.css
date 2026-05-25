@@ -2498,9 +2498,6 @@ html[lang="bn"] .en-only {
 }
 
 .law-search-panel {
-    position: sticky;
-    top: 84px;
-    z-index: 4;
     margin-bottom: 34px;
 }
 
