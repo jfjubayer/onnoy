@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Subtle reveal animations
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const animatedElements = document.querySelectorAll(
-        '.fade-in, .card, .impact-card, .resource-card, .scenario-card, .story-card, .feature-card, .question-card, .about-teaser, .form-section, .step'
+        '.fade-in, .card, .impact-card, .resource-card, .scenario-card, .story-card, .feature-card, .question-card, .about-teaser, .form-section, .step, .law-card, .law-concern-card, .law-provision'
     );
 
     animatedElements.forEach((el, index) => {
