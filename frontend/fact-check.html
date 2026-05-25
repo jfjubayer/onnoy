@@ -81,22 +81,22 @@
     <section class="section-gap container">
         <h2 class="section-title text-center">How It Works</h2>
         <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 50px;">
-            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">1</div>
-                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">Paste the link or message below</div>
+            <div class="step-card">
+                <div class="step-card-number">1</div>
+                <div class="step-card-text">Paste the link or message below</div>
             </div>
-            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">2</div>
-                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">Our team researches and verifies</div>
+            <div class="step-card">
+                <div class="step-card-number">2</div>
+                <div class="step-card-text">Our team researches and verifies</div>
             </div>
-            <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--green-pale); line-height: 1; margin-bottom: 15px;">3</div>
-                <div style="font-weight: 600; font-size: 1.1rem; color: var(--ink-mid);">We reply to your email with what we found</div>
+            <div class="step-card">
+                <div class="step-card-number">3</div>
+                <div class="step-card-text">We reply to your email with what we found</div>
             </div>
         </div>
 
         <!-- Form Section -->
-        <div style="max-width: 650px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+        <div class="form-card">
             <form action="https://formspree.io/f/xwvyyoqr" method="POST">
                 
                 <div class="form-group">
@@ -111,7 +111,7 @@
 
                 <div class="form-group">
                     <label for="source" class="form-label">Where did you see this? <span class="text-amber">*</span></label>
-                    <select id="source" name="source" class="form-control" required style="appearance: auto; cursor: pointer; background-color: var(--white);">
+                    <select id="source" name="source" class="form-control" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="WhatsApp">WhatsApp</option>
                         <option value="Facebook">Facebook</option>
@@ -133,11 +133,11 @@
                     <input type="text" id="link" name="link" class="form-control" placeholder="https://... (if you have one)">
                 </div>
 
-                <button type="submit" class="btn btn-green" style="width: 100%; margin-top: 15px; font-size: 1.1rem; padding: 15px;">Send for Verification &rarr;</button>
+                <button type="submit" class="btn btn-green full-submit">Send for Verification &rarr;</button>
             </form>
 
             <!-- Reassurance Note -->
-            <div style="background: var(--green-pale); border-radius: var(--radius); padding: 25px; color: var(--ink-mid); text-align: center; margin-top: 35px; font-size: 0.95rem; line-height: 1.6; border-left: 4px solid var(--green);">
+            <div class="reassurance-note text-center" style="margin-top: 35px;">
                 Your submission is reviewed by the Onnoy team — real people, not a bot. We do not share your name or email with anyone. This is a free service for students.
             </div>
         </div>

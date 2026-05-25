@@ -91,12 +91,12 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <div class="container section-gap">
         
         <!-- Empathy Message Box -->
-        <div style="max-width: 650px; margin: 0 auto 30px auto; background: var(--green-pale); border-radius: var(--radius); padding: 25px; color: var(--ink-mid); font-size: 1.1rem; line-height: 1.6; border-left: 4px solid var(--green);">
+        <div class="reassurance-note">
             Whether it's a photo shared without permission, a rumor spread online, or ongoing harassment — what happened to you is not your fault. We are here to listen and help where we can.
         </div>
 
         <!-- Form Section -->
-        <div style="max-width: 650px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+        <div class="form-card">
             <form action="https://formspree.io/f/xaqvvobg" method="POST">
                 
                 <input type="hidden" name="_subject" value="Onnoy Student Support Request">
@@ -113,7 +113,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
 
                 <div class="form-group">
                     <label for="issue" class="form-label">What happened? <span class="text-amber">*</span></label>
-                    <select id="issue" name="issue" class="form-control" required style="appearance: auto; cursor: pointer; background-color: var(--white);">
+                    <select id="issue" name="issue" class="form-control" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="My photo or video was shared without my permission">My photo or video was shared without my permission</option>
                         <option value="I am being harassed online">I am being harassed online</option>
@@ -133,13 +133,13 @@ gtag('config', 'GA_MEASUREMENT_ID');
                     <input type="text" id="time" name="time" class="form-control" placeholder="e.g. last week, a few days ago...">
                 </div>
 
-                <button type="submit" class="btn btn-green" style="width: 100%; margin-top: 15px; font-size: 1.1rem; padding: 15px;">Send Message to Onnoy &rarr;</button>
+                <button type="submit" class="btn btn-green full-submit">Send Message to Onnoy &rarr;</button>
 
             </form>
         </div>
 
         <!-- Reassurance Strip -->
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px; font-weight: bold; color: var(--ink-mid); text-align: center;">
+        <div class="trust-row">
             <div>🔒 Everything is confidential</div>
             <div>👤 You can stay anonymous</div>
             <div>💚 No judgment, ever</div>
