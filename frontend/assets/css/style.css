@@ -358,6 +358,13 @@ a {
 .btn-secondary:hover {
     background-color: var(--ink);
 }
+.btn:disabled,
+.btn[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.72;
+    transform: none;
+    box-shadow: none;
+}
 .full-width {
     width: 100%;
 }
@@ -1600,6 +1607,11 @@ html { scroll-behavior: smooth; }
         }
         .resource-link:hover {
             color: var(--green-light);
+        }
+        .resource-link-disabled,
+        .resource-link-disabled:hover {
+            color: var(--ink-mid);
+            cursor: not-allowed;
         }
         .section-title {
             font-size: 1.5rem;

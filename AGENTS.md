@@ -7,6 +7,18 @@
 
 ## Running Locally
 
+## Before Making Changes
+
+Before making code changes, sync the local `main` branch with the original remote code:
+
+```bash
+git checkout main
+git fetch origin
+git pull origin main
+```
+
+If the working tree has uncommitted changes, do not overwrite or discard them. Confirm whether they should be committed, stashed, or left untouched before pulling changes that could conflict.
+
 ### Frontend
 ```bash
 cd frontend
