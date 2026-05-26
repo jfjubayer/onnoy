@@ -39,7 +39,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <!-- 1. Navbar -->
     <nav class="navbar">
   <div class="nav-container">
-    <a href="index.html" class="logo"><img src="assets/images/logo.jpeg" alt="Onnoy Logo"><span data-i18n="nav-logo">Onnoy-অন্বয়</span></a>
+    <a href="index.html" class="logo"><img src="assets/images/logo-v2.jpeg" alt="Onnoy Logo"><span data-i18n="nav-logo">Onnoy-অন্বয়</span></a>
     <div class="nav-links">
       <a href="index.html" data-i18n="nav-home">Home</a>
       <div class="dropdown">
@@ -230,6 +230,46 @@ gtag('config', 'GA_MEASUREMENT_ID');
           };
           window.requestAnimationFrame(step);
         };
+
+        // Resolve API_BASE
+        const API_BASE = window.API_BASE || (() => {
+            const stored = localStorage.getItem('onnoy_api_base');
+            if (stored) return stored;
+            const { protocol, hostname } = window.location;
+            const origin = protocol === 'file:' ? 'http://localhost' : `${protocol}//${hostname}`;
+            return `${origin}:5000/api`;
+        })();
+
+        // Fetch live stats from API
+        fetch(`${API_BASE}/impact`)
+          .then(res => res.json())
+          .then(json => {
+            if (json.ok && json.data) {
+              const data = json.data;
+              const map = {
+                'impact-sessions': data.sessions,
+                'impact-students': data.students,
+                'impact-districts': data.districts,
+                'impact-satisfaction': data.satisfaction
+              };
+              counters.forEach(counter => {
+                const label = counter.nextElementSibling;
+                if (label && label.dataset.i18n) {
+                  const key = label.dataset.i18n;
+                  if (map[key] !== undefined) {
+                    counter.dataset.target = map[key];
+                  }
+                }
+              });
+              if (data.last_updated) {
+                const note = section.querySelector('.impact-note');
+                if (note) {
+                  note.textContent = `Numbers updated after every session. Last updated: ${data.last_updated}.`;
+                }
+              }
+            }
+          })
+          .catch(err => console.log('Using local fallback stats:', err));
 
         const observer = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
