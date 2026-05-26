@@ -103,53 +103,59 @@ gtag('config', 'GA_MEASUREMENT_ID');
         <section class="law-index" aria-labelledby="law-concern-title">
             <div class="law-section-heading">
                 <span class="law-kicker">Find by concern</span>
-                <h2 id="law-concern-title">Start with the real-world problem</h2>
-                <p>Each path opens the matching reference group below while keeping the original source trail available.</p>
+                <h2 id="law-concern-title">Choose one topic first</h2>
+                <p>Start with the real-world problem. The legal reference opens only after you choose a topic or search.</p>
             </div>
             <div class="law-concern-grid">
-                    <a class="law-concern-card" href="#digital-safety" data-filter-target="digital-safety">
-                        <span>Digital safety / hacking / unauthorized access</span>
-                        <p>Cyber Security Act, 2026 Sections 2, 4, 8, 15-19, 21-24, 35, 38, 46-48; ICT Act, 2006 Sections 46-47, 54-57, 63, 66, 68, 82 for tribunal/appellate framework</p>
-                    </a>
-                    <a class="law-concern-card" href="#cyberbullying" data-filter-target="cyberbullying">
-                        <span>Cyberbullying / threats / reputational abuse</span>
-                        <p>Cyber Security Act Sections 25-27; Penal Code Sections 499-500, 503-507, 509</p>
-                    </a>
-                    <a class="law-concern-card" href="#women-s-online-safety" data-filter-target="women-safety">
-                        <span>Women&#x27;s online safety / sexual image abuse</span>
-                        <p>Cyber Security Act Sections 2 and 25; Pornography Control Act Sections 2, 4, 6, 8, 10; Nari o Shishu Nirjatan Daman Ain Sections 9, 9A, 10, 14; Penal Code Sections 292-293, 354</p>
-                    </a>
-                    <a class="law-concern-card" href="#ai-abuse" data-filter-target="ai-abuse">
-                        <span>Deepfake / AI sexual abuse</span>
-                        <p>Cyber Security Act Sections 2(1)(ঢ), 2(1)(য), 2(1)(শ), 25(1)-(3)</p>
-                    </a>
-                    <a class="law-concern-card" href="#ai-abuse" data-filter-target="ai-abuse">
-                        <span>AI fraud / impersonation / manipulated data</span>
-                        <p>Cyber Security Act Sections 17, 18, 21, 22, 23; Penal Code Sections 463-465, 469</p>
-                    </a>
-                    <a class="law-concern-card" href="#copyright" data-filter-target="copyright">
-                        <span>Plagiarism / AI-copied digital work</span>
-                        <p>Copyright Act, 2023 Sections 2, 14-16, 69-70, 80, 82, 96-97, 100-105, 111, 113</p>
-                    </a>
-                    <a class="law-concern-card" href="#privacy" data-filter-target="privacy">
-                        <span>Doxxing / privacy / personal data misuse</span>
-                        <p>Personal Data Protection Act, 2026 Sections 5, 7, 9-13, 32-33; National Data Management Act, 2026 Sections 3, 31, 34, 42</p>
-                    </a>
+                    <button class="law-concern-card" type="button" data-filter-target="digital-safety" aria-pressed="false">
+                        <span>Digital safety, hacking, unauthorized access</span>
+                        <span class="law-concern-description">Accounts, devices, systems, malware, fraud, cyber terrorism, and core cyber offences.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="cyberbullying" aria-pressed="false">
+                        <span>Cyberbullying, threats, reputation harm</span>
+                        <span class="law-concern-description">Harassment, blackmail, hate speech, threats, defamation, and intimidation.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="women-safety" aria-pressed="false">
+                        <span>Women&#x27;s online safety and sexual image abuse</span>
+                        <span class="law-concern-description">Revenge porn, sextortion, sexual harassment, pornography offences, and victim identity.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="ai-abuse" aria-pressed="false">
+                        <span>AI abuse, deepfakes, impersonation</span>
+                        <span class="law-concern-description">AI-created or edited images, synthetic content, manipulated data, fraud, and forgery.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="copyright" aria-pressed="false">
+                        <span>Copyright and plagiarism</span>
+                        <span class="law-concern-description">Copied digital work, AI-assisted copying, infringement, remedies, and penalties.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="privacy" aria-pressed="false">
+                        <span>Privacy, doxxing, personal data misuse</span>
+                        <span class="law-concern-description">Consent, correction, deletion, data security, sensitive data, and administrative fines.</span>
+                    </button>
+                    <button class="law-concern-card" type="button" data-filter-target="legacy" aria-pressed="false">
+                        <span>Legacy and procedure</span>
+                        <span class="law-concern-description">Repeals, pending-case notes, tribunal references, and procedural context.</span>
+                    </button>
             </div>
         </section>
 
         <section class="law-card law-search-panel" aria-label="Search and filter legal provisions">
+            <div class="law-search-heading">
+                <div>
+                    <span class="law-kicker">Reference mode</span>
+                    <h2>Need a specific section?</h2>
+                </div>
+                <button class="law-reference-toggle" type="button" data-filter="all" aria-pressed="false">All reference sections</button>
+            </div>
             <label for="lawSearch">Search this reference</label>
             <input id="lawSearch" class="law-search-input" type="search" placeholder="Search by law, section, clause, Bengali title, or harm category">
             <div class="law-filter-row" aria-label="Filter by concern">
-                <button class="law-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
-<button class="law-filter" type="button" data-filter="digital-safety" aria-pressed="false">Digital Safety</button>
-<button class="law-filter" type="button" data-filter="cyberbullying" aria-pressed="false">Cyberbullying</button>
-<button class="law-filter" type="button" data-filter="women-safety" aria-pressed="false">Women&#x27;s Online Safety</button>
-<button class="law-filter" type="button" data-filter="ai-abuse" aria-pressed="false">AI Abuse</button>
-<button class="law-filter" type="button" data-filter="copyright" aria-pressed="false">Copyright</button>
-<button class="law-filter" type="button" data-filter="privacy" aria-pressed="false">Privacy</button>
-<button class="law-filter" type="button" data-filter="legacy" aria-pressed="false">Legacy/Procedure</button>
+                <button class="law-filter" type="button" data-filter="digital-safety" aria-pressed="false">Digital Safety</button>
+                <button class="law-filter" type="button" data-filter="cyberbullying" aria-pressed="false">Cyberbullying</button>
+                <button class="law-filter" type="button" data-filter="women-safety" aria-pressed="false">Women&#x27;s Online Safety</button>
+                <button class="law-filter" type="button" data-filter="ai-abuse" aria-pressed="false">AI Abuse</button>
+                <button class="law-filter" type="button" data-filter="copyright" aria-pressed="false">Copyright</button>
+                <button class="law-filter" type="button" data-filter="privacy" aria-pressed="false">Privacy</button>
+                <button class="law-filter" type="button" data-filter="legacy" aria-pressed="false">Legacy/Procedure</button>
             </div>
             <p class="law-result-count" id="lawResultCount" aria-live="polite"></p>
         </section>
@@ -172,6 +178,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <span class="law-kicker">Digital Safety</span>
                             <h2>Digital Safety And Core Cyber Offences</h2>
                             <p>ডিজিটাল সুরক্ষা</p>
+                        </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Unauthorized access, hacking, malware, fraud, protected systems, cyber terrorism, and investigation powers.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Cyber Security Act, 2026; Information and Communication Technology Act, 2006.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when a device, account, network, data, service, or system may have been accessed or misused without permission.</p>
+                            </div>
                         </div>
                             <div class="law-section-note"><p class="law-source-note">Source Act: <strong>Cyber Security Act, 2026</strong> (<code>সাইবার সুরক্ষা আইন, ২০২৬</code>)</p></div>
                             <details class="law-act" open>
@@ -440,6 +460,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <h2>Cyberbullying, Online Harassment, Threats, And Defamation</h2>
                             <p>সাইবারবুলিং</p>
                         </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Online harassment, blackmail, harmful posts, hate speech, threats, intimidation, defamation, and insults targeting dignity.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Cyber Security Act, 2026; Penal Code, 1860.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when online speech, messages, posts, or threats are being used to harm, pressure, shame, or intimidate someone.</p>
+                            </div>
+                        </div>
                             <div class="law-section-note"><p>Bangladesh law does not use a single universal label of &quot;cyberbullying&quot; in the current Cyber Security Act, but the conduct is covered through provisions on sexual harassment, blackmail, revenge porn, sextortion, hate speech, threats, defamation, intimidation and insults to a woman&#x27;s modesty.</p></div>
                             <details class="law-act">
                                 <summary><span>Cyber Security Act, 2026</span><span>7 provisions</span></summary>
@@ -466,7 +500,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                                         <span class="law-pill">Section 25</span>
                                         <span>Section 25(2)</span>
                                     </div>
-                                    <h4>same title</h4>
+                                    <h4>Punishment</h4>
                                     <p>General punishment for Section 25(1): up to 2 years imprisonment and/or Tk 10 lakh fine.</p>
                                 </article>
                                 <article class="law-provision" data-search-text="cyberbullying, online harassment, threats, and defamation cyber security act, 2026 section 25 same title section 25(3) enhanced punishment where the section 25(1) offence is committed against a woman or a child under 18: up to 5 years imprisonment and/or tk 20 lakh fine.">
@@ -474,7 +508,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                                         <span class="law-pill">Section 25</span>
                                         <span>Section 25(3)</span>
                                     </div>
-                                    <h4>same title</h4>
+                                    <h4>Enhanced punishment</h4>
                                     <p>Enhanced punishment where the Section 25(1) offence is committed against a woman or a child under 18: up to 5 years imprisonment and/or Tk 20 lakh fine.</p>
                                 </article>
                                 <article class="law-provision" data-search-text="cyberbullying, online harassment, threats, and defamation cyber security act, 2026 section 25 same title explanation defines blackmailing as threats/intimidation by which a person forces another, through fear of exposing confidential information or causing harm, to provide unlawful advantage/service or perform a demanded act.">
@@ -482,7 +516,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                                         <span class="law-pill">Section 25</span>
                                         <span>Explanation</span>
                                     </div>
-                                    <h4>same title</h4>
+                                    <h4>Explanation</h4>
                                     <p>Defines blackmailing as threats/intimidation by which a person forces another, through fear of exposing confidential information or causing harm, to provide unlawful advantage/service or perform a demanded act.</p>
                                 </article>
                                 <article class="law-provision" data-search-text="cyberbullying, online harassment, threats, and defamation cyber security act, 2026 section 26 সাইবার স্পেসে ধর্মীয় বা জাতিগত বিষয়ে সহিংসতা, ঘৃণা ও বিদ্বেষমূলক তথ্য প্রকাশ ইত্যাদির অপরাধ ও দণ্ড section 26(1)-(2) criminalizes intentional/knowing publication or causing publication in cyberspace, including under pseudonym or by unlawful access to one&#x27;s own or another&#x27;s id, of religious/communal hate or ethnic-hatred speech that creates violence, alarm, disorder or directs criminal activity. punishment: up to 2 years and/or tk 10 lakh.">
@@ -563,6 +597,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <span class="law-kicker">Women&#x27;s Online Safety</span>
                             <h2>Women&#x27;s Online Safety, Sexual Image Abuse, Revenge Porn, And Victim Identity</h2>
                             <p>নারী ও শিশুর অনলাইন সুরক্ষা</p>
+                        </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Sexual image abuse, revenge porn, sextortion, pornography offences, sexual harassment, victim identity, and child safety provisions.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Cyber Security Act, 2026; Pornography Control Act, 2012; Nari o Shishu Nirjatan Daman Ain, 2000; Penal Code, 1860.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when intimate images, sexualized edits, threats, coercion, or identity exposure are involved.</p>
+                            </div>
                         </div>
                             <details class="law-act">
                                 <summary><span>Cyber Security Act, 2026</span><span>5 provisions</span></summary>
@@ -730,7 +778,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                                         <span class="law-pill">Section 9</span>
                                         <span>Section 9(2)-(5)</span>
                                     </div>
-                                    <h4>same title</h4>
+                                    <h4>Aggravated punishments</h4>
                                     <p>Provides aggravated punishments where rape causes death, is committed by a group, involves attempted rape causing death/injury, involves grievous hurt to sexual organs/breasts for rape, or occurs in police/force custody.</p>
                                 </article>
                                 <article class="law-provision" data-search-text="women&#x27;s online safety, sexual image abuse, revenge porn, and victim identity nari o shishu nirjatan daman ain, 2000 section 9a নারীর আত্মহত্যায় প্ররোচনা, ইত্যাদির শাস্তি section 9a if a woman dies by suicide directly because her modesty was outraged by a person&#x27;s intentional act against her consent or will, that person is guilty of abetment of suicide. punishment: rigorous imprisonment up to 10 years with a minimum of 5 years, plus fine. *(may be relevant to severe online sexual humiliation, non-consensual intimate image distribution, or cyber harassment that directly causes the suicide and all elements are proven.)*">
@@ -795,6 +843,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <span class="law-kicker">AI Abuse</span>
                             <h2>AI Abuse, Deepfakes, Impersonation, And Synthetic Content</h2>
                             <p>এআই অপব্যবহার</p>
+                        </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Deepfakes, AI-generated sexual content, impersonation, manipulated data, cyber fraud, deception, forgery, and fake digital identity.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Cyber Security Act, 2026; Penal Code, 1860.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when AI tools, synthetic media, altered images, or manipulated records are part of the harm.</p>
+                            </div>
                         </div>
                             <div class="law-section-note"><p>The current Cyber Security Act, 2026 does not rely only on the English label &quot;deepfake&quot;; it uses conduct-based language. It expressly covers AI technology, AI tools, AI agents, AI-generated data, AI-created/AI-edited displayable data, and technological conversion/sexualization of images.</p></div>
                             <details class="law-act">
@@ -912,6 +974,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <h2>Plagiarism, AI-Copied Content, And Copyright Abuse</h2>
                             <p>কপিরাইট</p>
                         </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Copied digital work, plagiarism, AI-assisted copying, infringement, remedies, takedown-related context, and criminal penalties.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Copyright Act, 2023.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when someone copies, republishes, sells, adapts, distributes, or claims another person&#x27;s creative work.</p>
+                            </div>
+                        </div>
                             <div class="law-section-note"><p class="law-source-note">Source Act: <strong>Copyright Act, 2023</strong> (<code>কপিরাইট আইন, ২০২৩</code>, Act No. 34 of 2023)</p>
 <p>Bangladesh copyright law generally frames plagiarism-type conduct as copyright infringement, false authorship/attribution, unauthorized publication/performance, use beyond assigned rights, or infringement of information-technology based digital works. It does not need to use the English word &quot;plagiarism&quot; for the conduct to be legally relevant.</p></div>
                             <details class="law-act" open>
@@ -970,7 +1046,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                                         <span class="law-pill">Section 14</span>
                                         <span>Section 14(6)</span>
                                     </div>
-                                    <h4>same title</h4>
+                                    <h4>Limits on protection</h4>
                                     <p>Removes protection where, for example, the main part of a film is made by infringing another work&#x27;s copyright, or a sound recording infringes the underlying literary/dramatic/musical work during recording.</p>
                                 </article>
                                 <article class="law-provision" data-search-text="plagiarism, ai-copied content, and copyright abuse plagiarism, ai-copied content, and copyright abuse section 15 কপিরাইটের প্রথম স্বত্বাধিকারী section 15(1)-(2) establishes the author as first copyright owner, subject to exceptions for employment, commissioned work, government work, international organizations and information-technology based digital works where the commissioning employer/person/institution may be first owner unless otherwise agreed.">
@@ -1102,6 +1178,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <h2>Related Privacy And Data Protection Provisions</h2>
                             <p>গোপনীয়তা</p>
                         </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Personal data, consent, correction, deletion, automated decisions, sensitive data, government data handling, and administrative fines.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Personal Data Protection Act, 2026; National Data Management Act, 2026.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when private information is collected, exposed, shared, stored, corrected, deleted, or processed without proper care.</p>
+                            </div>
+                        </div>
                             <div class="law-section-note"><p>These provisions are relevant to doxxing, unauthorized processing of personal data, AI profiling, exposure of sensitive data and privacy harms that may accompany online abuse.</p></div>
                             <details class="law-act">
                                 <summary><span>Personal Data Protection Act, 2026</span><span>9 provisions</span></summary>
@@ -1226,6 +1316,20 @@ gtag('config', 'GA_MEASUREMENT_ID');
                             <h2>Legacy And Procedural Notes</h2>
                             <p>প্রক্রিয়া</p>
                         </div>
+                        <div class="law-topic-intro">
+                            <div>
+                                <h3>What this covers</h3>
+                                <p>Repeals, savings clauses, pending-case treatment, and tribunal references connected to the current cyber-law framework.</p>
+                            </div>
+                            <div>
+                                <h3>Key laws</h3>
+                                <p>Cyber Security Act, 2026; Information and Communication Technology Act, 2006.</p>
+                            </div>
+                            <div>
+                                <h3>When to read this</h3>
+                                <p>Use this when checking whether an older cyber-law reference still matters or where tribunal procedure comes from.</p>
+                            </div>
+                        </div>
                             <details class="law-act" open>
                                 <summary><span>Procedural provisions</span><span>3 provisions</span></summary>
                                 <div class="law-card-grid">
@@ -1260,12 +1364,16 @@ gtag('config', 'GA_MEASUREMENT_ID');
         </div>
 
         <section class="law-card law-source-list" aria-labelledby="source-trail-title">
-            <div class="law-section-heading">
-                <span class="law-kicker">Source trail</span>
-                <h2 id="source-trail-title">Primary sources used</h2>
+            <details>
+                <summary>
+                    <span>
+                        <span class="law-kicker">Source trail</span>
+                        <strong id="source-trail-title">Primary sources used</strong>
+                    </span>
+                    <span>Official links</span>
+                </summary>
                 <p>Source links are preserved from the research reference so readers can continue into official texts.</p>
-            </div>
-            <ul>
+                <ul>
                     <li>
                         <span>Bangladesh Legal Database: Cyber Security Act, 2026</span>
                         <a href="http://bdlaws.minlaw.gov.bd/act-1710.html" target="_blank" rel="noopener">bdlaws.minlaw.gov.bd/act-1710.html</a>
@@ -1306,7 +1414,8 @@ gtag('config', 'GA_MEASUREMENT_ID');
                         <span>National Data Management Act, 2026</span>
                         <a href="http://bdlaws.minlaw.gov.bd/act-1709.html" target="_blank" rel="noopener">bdlaws.minlaw.gov.bd/act-1709.html</a>
                     </li>
-            </ul>
+                </ul>
+            </details>
         </section>
     </main>
 
@@ -1337,28 +1446,75 @@ gtag('config', 'GA_MEASUREMENT_ID');
   const filters = Array.from(document.querySelectorAll('.law-filter'));
   const sections = Array.from(document.querySelectorAll('.law-reference-section'));
   const concernCards = Array.from(document.querySelectorAll('.law-concern-card'));
+  const referenceToggle = document.querySelector('.law-reference-toggle');
+  const layout = document.querySelector('.law-layout');
+  const tocLinks = Array.from(document.querySelectorAll('.law-toc a'));
   const resultCount = document.getElementById('lawResultCount');
-  let activeFilter = 'all';
+  let activeFilter = null;
 
   function normalize(value) {
     return (value || '').toLocaleLowerCase();
   }
 
-  function sectionMatches(section, query) {
-    const haystack = normalize(section.dataset.searchText + ' ' + section.textContent);
-    const concern = section.dataset.concern;
-    const filterMatch = activeFilter === 'all' || concern === activeFilter;
-    const queryMatch = !query || haystack.includes(query);
-    return filterMatch && queryMatch;
+  function getSectionIdForConcern(concern) {
+    const section = sections.find(item => item.dataset.concern === concern);
+    return section ? section.id : '';
   }
 
-  function applyFilters() {
+  function setActiveControls() {
+    const showAll = activeFilter === 'all';
+
+    if (referenceToggle) {
+      referenceToggle.classList.toggle('active', showAll);
+      referenceToggle.setAttribute('aria-pressed', String(showAll));
+    }
+
+    filters.forEach(item => {
+      const active = item.dataset.filter === activeFilter;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+
+    concernCards.forEach(card => {
+      const active = card.dataset.filterTarget === activeFilter;
+      card.classList.toggle('active', active);
+      card.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  function openRelevantGroups(section, query, isSelectedTopic) {
+    const acts = Array.from(section.querySelectorAll('.law-act'));
+
+    acts.forEach((act, index) => {
+      const hasVisibleCards = Array.from(act.querySelectorAll('.law-provision')).some(card => !card.hidden);
+      act.hidden = query ? !hasVisibleCards : false;
+
+      if (query && hasVisibleCards) {
+        act.open = true;
+      } else if (isSelectedTopic) {
+        act.open = index === 0;
+      } else {
+        act.open = false;
+      }
+    });
+  }
+
+  function applyFilters(options) {
+    const settings = options || {};
     const query = normalize(search ? search.value.trim() : '');
-    let visible = 0;
+    const hasActiveView = Boolean(activeFilter || query);
+    let visibleSections = 0;
+    let visibleProvisions = 0;
+
+    if (layout) layout.hidden = !hasActiveView;
 
     sections.forEach(section => {
       const provisionCards = Array.from(section.querySelectorAll('.law-provision'));
       let visibleCards = 0;
+      const concern = section.dataset.concern;
+      const filterMatch = query && !activeFilter
+        ? true
+        : activeFilter === 'all' || concern === activeFilter;
 
       provisionCards.forEach(card => {
         const haystack = normalize(card.dataset.searchText + ' ' + card.textContent);
@@ -1367,49 +1523,81 @@ gtag('config', 'GA_MEASUREMENT_ID');
         if (cardMatch) visibleCards += 1;
       });
 
-      const showSection = sectionMatches(section, query) && (visibleCards > 0 || !query);
+      const showSection = hasActiveView && filterMatch && (query ? visibleCards > 0 : true);
       section.hidden = !showSection;
-      if (showSection) visible += 1;
 
-      section.querySelectorAll('.law-act').forEach(act => {
-        const hasVisibleCards = Array.from(act.querySelectorAll('.law-provision')).some(card => !card.hidden);
-        act.hidden = query ? !hasVisibleCards : false;
-        if (query && hasVisibleCards) act.open = true;
-      });
+      if (showSection) {
+        visibleSections += 1;
+        visibleProvisions += visibleCards;
+        openRelevantGroups(section, query, activeFilter !== 'all' && concern === activeFilter && !query);
+      }
     });
 
     if (resultCount) {
-      resultCount.textContent = visible === sections.length && activeFilter === 'all' && !query
-        ? 'Showing all reference sections.'
-        : `Showing ${visible} matching section${visible === 1 ? '' : 's'}.`;
+      if (!hasActiveView) {
+        resultCount.textContent = 'Choose a topic above, search for a term, or open all reference sections.';
+      } else if (query) {
+        resultCount.textContent = `Showing ${visibleSections} matching section${visibleSections === 1 ? '' : 's'} and ${visibleProvisions} matching provision${visibleProvisions === 1 ? '' : 's'}.`;
+      } else if (activeFilter === 'all') {
+        resultCount.textContent = `Showing all ${visibleSections} reference sections.`;
+      } else {
+        resultCount.textContent = `Showing 1 selected topic with ${visibleProvisions} provision${visibleProvisions === 1 ? '' : 's'}.`;
+      }
+    }
+
+    if (settings.scroll && activeFilter && activeFilter !== 'all') {
+      const targetId = getSectionIdForConcern(activeFilter);
+      const target = targetId ? document.getElementById(targetId) : null;
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
   filters.forEach(button => {
     button.addEventListener('click', () => {
-      activeFilter = button.dataset.filter || 'all';
-      filters.forEach(item => {
-        const active = item === button;
-        item.classList.toggle('active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      applyFilters();
+      activeFilter = button.dataset.filter || null;
+      setActiveControls();
+      applyFilters({ scroll: true });
     });
   });
 
   concernCards.forEach(card => {
     card.addEventListener('click', () => {
-      activeFilter = card.dataset.filterTarget || 'all';
-      filters.forEach(item => {
-        const active = item.dataset.filter === activeFilter;
-        item.classList.toggle('active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      applyFilters();
+      activeFilter = card.dataset.filterTarget || null;
+      setActiveControls();
+      applyFilters({ scroll: true });
     });
   });
 
-  if (search) search.addEventListener('input', applyFilters);
+  if (referenceToggle) {
+    referenceToggle.addEventListener('click', () => {
+      activeFilter = activeFilter === 'all' ? null : 'all';
+      setActiveControls();
+      applyFilters();
+    });
+  }
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      event.preventDefault();
+      activeFilter = target.dataset.concern || null;
+      setActiveControls();
+      applyFilters();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  if (search) {
+    search.addEventListener('input', () => {
+      if (search.value.trim()) activeFilter = null;
+      setActiveControls();
+      applyFilters();
+    });
+  }
+
+  setActiveControls();
   applyFilters();
 }());
     </script>
