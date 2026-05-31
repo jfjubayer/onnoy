@@ -232,17 +232,22 @@ gtag('config', 'GA_MEASUREMENT_ID');
           window.requestAnimationFrame(step);
         };
 
-        // Resolve API_BASE
+        // Resolve API_BASE. Only auto-discover the dev backend on :5000 when running
+        // locally; in production there is no backend at `${host}:5000`, so attempting
+        // the fetch there only produces noisy CORS/connection errors in the console.
+        // Set window.API_BASE or localStorage.onnoy_api_base to point at a real backend.
         const API_BASE = window.API_BASE || (() => {
             const stored = localStorage.getItem('onnoy_api_base');
             if (stored) return stored;
             const { protocol, hostname } = window.location;
+            const isLocal = protocol === 'file:' || ['localhost', '127.0.0.1'].includes(hostname);
+            if (!isLocal) return null;
             const origin = protocol === 'file:' ? 'http://localhost' : `${protocol}//${hostname}`;
             return `${origin}:5000/api`;
         })();
 
-        // Fetch live stats from API
-        fetch(`${API_BASE}/impact`)
+        // Fetch live stats from API (skipped when no backend is configured/reachable)
+        if (API_BASE) fetch(`${API_BASE}/impact`)
           .then(res => res.json())
           .then(json => {
             if (json.ok && json.data) {
