@@ -28,6 +28,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
 </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Page Loader -->
     <div class="loader-wrapper" id="loader">
         <div class="loader"></div>
@@ -82,7 +83,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
 </nav>
 
     <!-- 2. Hero Section -->
-    <header class="hero">
+    <header class="hero" id="main" tabindex="-1">
         <div class="container fade-in visible">
             <h1 style="display: inline-flex; align-items: center; gap: 12px; justify-content: center; width: 100%;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #D32F2F;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>Misinformation Red Flags</h1>
             <p>মিথ্যা তথ্য চেনার উপায়</p>
@@ -162,7 +163,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <button class="btn-no active" onclick="toggleItem(this, 'no')">NO</button>
     </div>
   </div>
-  <div class="checklist-result" id="checklist-result" style="background: var(--surface-soft); border-color: var(--border); color: var(--ink-mid);">
+  <div class="checklist-result" id="checklist-result" aria-live="polite">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:26px; height:26px; flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
     <span>Select YES or NO for each item above</span>
   </div>
@@ -198,11 +199,31 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <script>
 function toggleItem(btn, choice) {
   const item = btn.closest('.checklist-item');
-  item.querySelectorAll('.btn-yes, .btn-no').forEach(b => b.classList.remove('active'));
+  item.querySelectorAll('.btn-yes, .btn-no').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-checked', 'false');
+  });
   btn.classList.add('active');
+  btn.setAttribute('aria-checked', 'true');
   item.dataset.checked = choice === 'yes' ? 'true' : 'false';
   updateResult();
 }
+
+// Accessibility: expose each YES/NO pair as a labelled radio group.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.checklist-item').forEach(item => {
+    const text = item.querySelector('.item-text');
+    const group = item.querySelector('.toggle-btns');
+    if (group) {
+      group.setAttribute('role', 'radiogroup');
+      if (text) group.setAttribute('aria-label', text.textContent.trim());
+    }
+    item.querySelectorAll('.btn-yes, .btn-no').forEach(b => {
+      b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', b.classList.contains('active') ? 'true' : 'false');
+    });
+  });
+});
 function updateResult() {
   const yesCount = document.querySelectorAll('.checklist-item[data-checked="true"]').length;
   const result = document.getElementById('checklist-result');
@@ -214,16 +235,16 @@ function updateResult() {
 
   if (yesCount <= 2) {
     result.innerHTML = `${iconSafe} <span><strong>Probably Safe</strong> — তবে সতর্ক থাকুন। This looks relatively trustworthy but always verify important information.</span>`;
-    result.style.background = '#e8f5e9'; result.style.borderColor = '#2e7d32'; result.style.color = '#1b5e20';
+    result.className = 'checklist-result checklist-result--safe';
   } else if (yesCount <= 4) {
     result.innerHTML = `${iconCaution} <span><strong>Proceed with Caution</strong> — সতর্কতার সাথে যাচাই করুন। Several red flags present. Do not share without verifying.</span>`;
-    result.style.background = '#fffde7'; result.style.borderColor = '#f9a825'; result.style.color = '#f57f17';
+    result.className = 'checklist-result checklist-result--caution';
   } else if (yesCount <= 6) {
     result.innerHTML = `${iconMisinfo} <span><strong>Likely Misinformation</strong> — এটা মিথ্যা তথ্য হতে পারে। This has too many warning signs. Do not share.</span>`;
-    result.style.background = '#fff3e0'; result.style.borderColor = '#e65100'; result.style.color = '#e65100';
+    result.className = 'checklist-result checklist-result--warning';
   } else {
     result.innerHTML = `${iconFake} <span><strong>Almost Certainly Fake</strong> — শেয়ার করবেন না। Stop. Do not share this. Report it if possible.</span>`;
-    result.style.background = '#ffebee'; result.style.borderColor = '#b71c1c'; result.style.color = '#c62828';
+    result.className = 'checklist-result checklist-result--danger';
   }
 }
     </script>
