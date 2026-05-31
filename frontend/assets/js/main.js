@@ -167,10 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
+                // Move focus to the target for keyboard users (e.g. skip link → main).
+                target.focus({ preventScroll: true });
             }
         });
     });
@@ -201,4 +205,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     animatedElements.forEach(el => observer.observe(el));
+
+    // Reveal safety net: content must never stay stuck hidden, even if the
+    // IntersectionObserver fires late or misbehaves. On scroll/resize/load we
+    // force-reveal any element within (or above) the viewport. Below-fold
+    // elements still wait until scrolled into view, preserving reveal-on-scroll.
+    let scheduled = false;
+    const revealInView = () => {
+        scheduled = false;
+        let remaining = 0;
+        animatedElements.forEach(el => {
+            if (el.classList.contains('visible')) return;
+            if (el.getBoundingClientRect().top < window.innerHeight - 40) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            } else {
+                remaining++;
+            }
+        });
+        if (remaining === 0) {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+        }
+    };
+    const onScroll = () => {
+        if (scheduled) return;
+        scheduled = true;
+        window.requestAnimationFrame(revealInView);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', () => window.setTimeout(revealInView, 1200), { once: true });
 });

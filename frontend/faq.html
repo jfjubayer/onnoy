@@ -27,6 +27,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
 </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Page Loader -->
     <div class="loader-wrapper" id="loader">
         <div class="loader"></div>
@@ -78,7 +79,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
   </div>
 </nav>
 
-    <header class="faq-hero">
+    <header class="faq-hero" id="main" tabindex="-1">
         <div class="container">
             <div class="faq-hero-grid">
                 <div class="faq-hero-copy">
@@ -271,6 +272,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                 const button = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
                 button.classList.remove('active');
+                button.setAttribute('aria-expanded', 'false');
                 answer.classList.remove('open');
                 answer.style.maxHeight = '0';
                 button.querySelector('.icon').textContent = '+';
@@ -283,6 +285,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
                 const button = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
                 button.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
                 answer.classList.add('open');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
                 button.querySelector('.icon').textContent = '−';
@@ -296,9 +299,12 @@ gtag('config', 'GA_MEASUREMENT_ID');
                 });
             };
 
-            faqItems.forEach(item => {
+            faqItems.forEach((item, i) => {
                 const button = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
+                if (!answer.id) answer.id = 'faq-answer-' + (i + 1);
+                button.setAttribute('aria-controls', answer.id);
+                button.setAttribute('aria-expanded', 'false');
                 answer.style.maxHeight = '0';
                 button.addEventListener('click', () => {
                     if (item === currentOpen) {

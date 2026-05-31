@@ -10,21 +10,45 @@
   --green-light: #2D8A50;
   --green-pale: #EDF5F0;
   --amber: #C8860A;
+  --amber-dark: #d4951a;
   --ink: #1F1F1F;
   --ink-mid: #4A4A4A;
-  --ink-light: #737373;
+  --ink-light: #6E6E6E;
   --white: #FFFFFF;
   --paper: #F9F8F5;
   --surface: #FFFFFF;
   --surface-soft: #F5F7F3;
-  --border: #E2E4DE;
+  --border: #E4E7E1;
   --radius: 10px;
   --radius-lg: 18px;
   --radius-pill: 999px;
-  --shadow: 0 12px 32px rgba(18, 74, 40, 0.06), 0 2px 8px rgba(18, 74, 40, 0.04);
-  --shadow-soft: 0 4px 12px rgba(18, 74, 40, 0.05);
+  --shadow: 0 6px 20px rgba(17, 24, 19, 0.05), 0 1px 2px rgba(17, 24, 19, 0.04);
+  --shadow-soft: 0 2px 8px rgba(17, 24, 19, 0.04);
   --focus-ring: 0 0 0 3px rgba(45, 138, 80, 0.15);
   --transition-theme: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+
+  /* Layout */
+  --nav-h: 76px;
+
+  /* Fluid type scale */
+  --fs-hero: clamp(2.5rem, 5.3vw, 4.4rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.8rem, 3.2vw, 2.55rem);
+  --fs-h3: clamp(1.15rem, 1.6vw, 1.35rem);
+
+  /* Semantic status tokens (values track the existing verdict/result hexes) */
+  --success: #4CAF50;
+  --success-bg: #E8F5E9;
+  --success-fg: #1B5E20;
+  --caution: #F9A825;
+  --caution-bg: #FFF9C4;
+  --caution-fg: #F57F17;
+  --warning: #FB8C00;
+  --warning-bg: #FFE0B2;
+  --warning-fg: #E65100;
+  --danger: #D32F2F;
+  --danger-bg: #FFEBEE;
+  --danger-fg: #B71C1C;
 }
 
 /* ── Dark Mode ─────────────────────────────────────────────────────────────── */
@@ -41,7 +65,22 @@
   --surface: #1E1E1E;
   --surface-soft: #17221B;
   --border: #2E3A32;
-  --shadow: 0 10px 40px rgba(0,0,0,0.4);
+  --shadow: 0 10px 30px rgba(0,0,0,0.36), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.3);
+
+  /* Semantic status tokens — dark variants (dark-tinted bg, lighter fg) */
+  --success: #4DC275;
+  --success-bg: #16301F;
+  --success-fg: #8FE0AA;
+  --caution: #E0A93B;
+  --caution-bg: #332B12;
+  --caution-fg: #F2D38A;
+  --warning: #F0A04B;
+  --warning-bg: #33240F;
+  --warning-fg: #F5C28A;
+  --danger: #E5736F;
+  --danger-bg: #331717;
+  --danger-fg: #F0A8A5;
 }
 [data-theme="dark"] body { transition: var(--transition-theme); }
 [data-theme="dark"] .navbar { background: #1A1A1A; border-bottom: 1px solid #2A2A2A; }
@@ -78,7 +117,7 @@ body {
     background-color: var(--paper);
     color: var(--ink);
     line-height: 1.65;
-    padding-top: 76px;
+    padding-top: var(--nav-h);
     transition: var(--transition-theme);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -112,7 +151,7 @@ a {
     -webkit-backdrop-filter: blur(16px) saturate(1.4);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     z-index: 1000;
-    height: 76px;
+    height: var(--nav-h);
     display: flex;
     align-items: center;
 }
@@ -279,7 +318,7 @@ a {
     pointer-events: none;
 }
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: var(--fs-h1);
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -340,7 +379,7 @@ a {
     color: #FFFFFF;
 }
 .btn-amber:hover {
-    background-color: #d4951a;
+    background-color: var(--amber-dark);
 }
 .btn-outline {
     background-color: transparent;
@@ -756,7 +795,7 @@ textarea.form-control {
     .nav-links {
         display: none;
         position: absolute;
-        top: 76px;
+        top: var(--nav-h);
         left: 0;
         right: 0;
         background: var(--white);
@@ -789,25 +828,20 @@ textarea.form-control {
     }
 }
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Animations — see canonical reveal failsafe below (.js-ready .fade-in:not(.visible)) */
 .checklist-container { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 .checklist-item { background: var(--white); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .checklist-item .flag { font-size: 24px; }
 .checklist-item .item-text { flex: 1; font-size: 16px; color: var(--ink); min-width: 200px; }
 .toggle-btns { display: flex; gap: 8px; }
 .btn-yes, .btn-no { padding: 8px 18px; border: 2px solid #ddd; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 14px; background: var(--white); transition: all 0.2s; }
-.btn-yes.active { background: #ffebee; border-color: #c62828; color: #c62828; }
+.btn-yes.active { background: var(--danger-bg); border-color: var(--danger); color: var(--danger-fg); }
 .btn-no.active { background: var(--green-pale); border-color: var(--green); color: var(--green); }
-.checklist-result { background: var(--green-pale); border: 2px solid var(--green); border-radius: 12px; padding: 20px; text-align: center; font-size: 16px; margin-top: 8px; transition: all 0.3s; }
+.checklist-result { background: var(--surface-soft); border: 2px solid var(--border); color: var(--ink-mid); border-radius: 12px; padding: 20px; text-align: center; font-size: 16px; margin-top: 8px; transition: all 0.3s; }
+.checklist-result--safe { background: var(--success-bg); border-color: var(--success); color: var(--success-fg); }
+.checklist-result--caution { background: var(--caution-bg); border-color: var(--caution); color: var(--caution-fg); }
+.checklist-result--warning { background: var(--warning-bg); border-color: var(--warning); color: var(--warning-fg); }
+.checklist-result--danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger-fg); }
 
 /* Pill Button Amber */
 .btn-pill-amber {
@@ -836,7 +870,7 @@ textarea.form-control {
     box-shadow: 0 8px 22px rgba(26, 107, 58, 0.22);
 }
 .btn-pill-amber:hover {
-    background-color: #d4951a;
+    background-color: var(--amber-dark);
     color: #FFFFFF !important;
 }
 
@@ -1204,6 +1238,12 @@ html { scroll-behavior: smooth; }
             cursor: pointer;
             transition: all 0.2s;
             background: var(--white);
+            /* reset button defaults (options are <button> for a11y) */
+            width: 100%;
+            display: block;
+            text-align: left;
+            font: inherit;
+            color: inherit;
         }
         .option:hover {
             border-color: var(--green);
@@ -1324,7 +1364,7 @@ html { scroll-behavior: smooth; }
             color: var(--green);
         }
         .toggle-yes.active {
-            background-color: #D32F2F;
+            background-color: var(--danger);
             color: #FFFFFF;
         }
         .result-box {
@@ -1349,24 +1389,24 @@ html { scroll-behavior: smooth; }
             line-height: 1.5;
         }
         .result-safe {
-            background-color: #E8F5E9;
-            border-left: 5px solid #4CAF50;
-            color: #1B5E20;
+            background-color: var(--success-bg);
+            border-left: 5px solid var(--success);
+            color: var(--success-fg);
         }
         .result-caution {
-            background-color: #FFF9C4;
-            border-left: 5px solid #FBC02D;
-            color: #F57F17;
+            background-color: var(--caution-bg);
+            border-left: 5px solid var(--caution);
+            color: var(--caution-fg);
         }
         .result-misinformation {
-            background-color: #FFE0B2;
-            border-left: 5px solid #FF9800;
-            color: #E65100;
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning);
+            color: var(--warning-fg);
         }
         .result-fake {
-            background-color: #FFEBEE;
-            border-left: 5px solid #D32F2F;
-            color: #B71C1C;
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger);
+            color: var(--danger-fg);
         }
         .action-buttons {
             display: flex;
@@ -1518,7 +1558,7 @@ html { scroll-behavior: smooth; }
             transition: all 0.2s;
         }
         .notify-btn:hover {
-            background-color: #d4951a;
+            background-color: var(--amber-dark);
         }
         .attribution {
             font-size: 0.85rem;
@@ -1674,7 +1714,7 @@ html { scroll-behavior: smooth; }
             border: none;
         }
         .print-btn:hover {
-            background-color: #d4951a;
+            background-color: var(--amber-dark);
         }
         .cards-grid {
             display: grid;
@@ -2091,7 +2131,7 @@ html[lang="bn"] .en-only {
 
 .section-title {
     color: var(--ink);
-    font-size: clamp(1.8rem, 3.2vw, 2.55rem);
+    font-size: var(--fs-h2);
     line-height: 1.12;
     margin: 0 0 32px;
     padding-bottom: 0;
@@ -2228,9 +2268,9 @@ html[lang="bn"] .en-only {
     display: flex;
     align-items: center;
     background:
-        linear-gradient(rgba(18, 74, 40, 0.78), rgba(18, 74, 40, 0.82)),
+        linear-gradient(178deg, rgba(16, 58, 32, 0.72) 0%, rgba(11, 45, 25, 0.86) 100%),
         url("../images/youth-tech.png") center 43% / cover no-repeat;
-    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.28);
 }
 
 .home-hero .container {
@@ -2238,7 +2278,7 @@ html[lang="bn"] .en-only {
 }
 
 .home-hero h1 {
-    font-size: clamp(2.5rem, 5.3vw, 4.6rem);
+    font-size: var(--fs-hero);
     line-height: 1.02;
     margin-bottom: 24px;
 }
@@ -2312,8 +2352,8 @@ html[lang="bn"] .en-only {
 .story-card:hover,
 .feature-card:hover,
 .scenario-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(45, 138, 80, 0.38);
+    transform: translateY(-2px);
+    border-color: rgba(45, 138, 80, 0.30);
     box-shadow: var(--shadow);
 }
 
@@ -2479,12 +2519,16 @@ html[lang="bn"] .en-only {
     clip: auto;
 }
 
+/* Canonical reveal failsafe:
+   - Content is fully visible by default (no JS, or before observer runs).
+   - Only hidden when JS is ready AND the element has not yet been revealed,
+     so it can never get stuck invisible (no show→hide→reveal flash). */
 .fade-in {
     opacity: 1;
     transform: none;
 }
 
-.js-ready .fade-in {
+.js-ready .fade-in:not(.visible) {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.55s ease, transform 0.55s ease;
@@ -2494,6 +2538,8 @@ html[lang="bn"] .en-only {
 .js-ready .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    transition-delay: var(--reveal-delay, 0ms);
 }
 
 /* Digital Safety Laws reference */
@@ -2515,7 +2561,6 @@ html[lang="bn"] .en-only {
 
 .law-hero h1,
 .law-section-heading h2 {
-    font-family: Georgia, "Times New Roman", serif;
     letter-spacing: 0;
 }
 
@@ -3005,7 +3050,6 @@ html[lang="bn"] .en-only {
     display: block;
     margin-top: 6px;
     color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.45rem, 3vw, 2rem);
     line-height: 1.15;
 }
@@ -3886,7 +3930,7 @@ footer .social-links a:hover {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 76px;
+        padding-top: var(--nav-h);
     }
 
     .nav-container {
@@ -4144,3 +4188,76 @@ footer .social-links a:hover {
     margin-left: 4px; /* visually center the triangle */
 }
 
+
+/* ── Accessibility: skip link + focus visibility ─────────────────────────── */
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -64px;
+    z-index: 2000;
+    background: var(--green);
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow);
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 12px;
+    outline: none;
+    box-shadow: var(--focus-ring), var(--shadow);
+}
+
+/* Skip-link landmark: land below the fixed navbar, no stray outline ring */
+#main,
+#mainContent {
+    scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+#main:focus,
+#mainContent:focus {
+    outline: none;
+}
+
+/* Ensure every interactive element shows a clear focus ring (light + dark).
+   .btn and the nav controls already define a box-shadow ring above. */
+a:focus-visible,
+button:not(.btn):focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex="0"]:focus-visible {
+    outline: 2px solid var(--green-light);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ── Admin dashboard (moved from admin.html inline <style>) ───────────────── */
+.admin-container { padding: 40px 0; }
+.admin-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    border: 1px solid var(--border);
+}
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.request-item { border-bottom: 1px solid var(--border); padding: 15px 0; }
+/* admin badges are compact square tags, not the green module pill */
+.admin-card .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--surface-soft);
+    color: var(--ink-mid);
+}
+.badge-pending { background: var(--warning-bg); color: var(--warning-fg); }
+.login-overlay { position: fixed; inset: 0; background: var(--paper); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.login-box { width: 100%; max-width: 400px; padding: 40px; text-align: center; }

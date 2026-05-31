@@ -4,3 +4,9 @@ venv/
 __pycache__/
 *.py[cod]
 tests/
+
+# Playwright MCP scratch output + local UI screenshots
+.playwright-mcp/
+/idx-*.png
+/laws-*.png
+/onnoy-index-current.png
