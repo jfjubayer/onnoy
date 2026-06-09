@@ -1,4 +1,6 @@
 /* Shared stylesheet, all pages */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +8,25 @@
 }
 
 :root {
-  --green: #1A6B3A;
-  --green-light: #2D8A50;
-  --green-pale: #EDF5F0;
-  --amber: #C8860A;
-  --amber-dark: #d4951a;
-  --ink: #1F1F1F;
-  --ink-mid: #4A4A4A;
-  --ink-light: #6E6E6E;
+  --green: #059669;
+  --green-light: #10B981;
+  --green-pale: #ECFDF5;
+  --amber: #F59E0B;
+  --amber-dark: #D97706;
+  --ink: #0F172A;
+  --ink-mid: #475569;
+  --ink-light: #64748B;
   --white: #FFFFFF;
-  --paper: #F9F8F5;
-  --surface: #FFFFFF;
-  --surface-soft: #F5F7F3;
-  --border: #E4E7E1;
-  --radius: 10px;
-  --radius-lg: 18px;
+  --paper: #F8FAFC;
+  --surface: rgba(255, 255, 255, 0.75);
+  --surface-soft: #F1F5F9;
+  --border: rgba(226, 232, 240, 0.8);
+  --radius: 12px;
+  --radius-lg: 20px;
   --radius-pill: 999px;
-  --shadow: 0 6px 20px rgba(17, 24, 19, 0.05), 0 1px 2px rgba(17, 24, 19, 0.04);
-  --shadow-soft: 0 2px 8px rgba(17, 24, 19, 0.04);
-  --focus-ring: 0 0 0 3px rgba(45, 138, 80, 0.15);
+  --shadow: 0 20px 40px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  --shadow-soft: 0 4px 12px rgba(15, 23, 42, 0.02);
+  --focus-ring: 0 0 0 3px rgba(16, 185, 129, 0.15);
   --transition-theme: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 
   /* Layout */
@@ -36,51 +38,51 @@
   --fs-h2: clamp(1.8rem, 3.2vw, 2.55rem);
   --fs-h3: clamp(1.15rem, 1.6vw, 1.35rem);
 
-  /* Semantic status tokens (values track the existing verdict/result hexes) */
-  --success: #4CAF50;
-  --success-bg: #E8F5E9;
-  --success-fg: #1B5E20;
-  --caution: #F9A825;
-  --caution-bg: #FFF9C4;
-  --caution-fg: #F57F17;
-  --warning: #FB8C00;
-  --warning-bg: #FFE0B2;
-  --warning-fg: #E65100;
-  --danger: #D32F2F;
-  --danger-bg: #FFEBEE;
-  --danger-fg: #B71C1C;
+  /* Semantic status tokens */
+  --success: #10B981;
+  --success-bg: #ECFDF5;
+  --success-fg: #047857;
+  --caution: #F59E0B;
+  --caution-bg: #FEF3C7;
+  --caution-fg: #B45309;
+  --warning: #F97316;
+  --warning-bg: #FFEDD5;
+  --warning-fg: #C2410C;
+  --danger: #EF4444;
+  --danger-bg: #FEE2E2;
+  --danger-fg: #B91C1C;
 }
 
 /* ── Dark Mode ─────────────────────────────────────────────────────────────── */
 [data-theme="dark"] {
-  --green: #3DAB65;
-  --green-light: #4DC275;
-  --green-pale: #1A3328;
-  --amber: #F0B030;
-  --ink: #EAEAEA;
-  --ink-mid: #B0B0B0;
-  --ink-light: #808080;
-  --white: #1E1E1E;
-  --paper: #121212;
-  --surface: #1E1E1E;
-  --surface-soft: #17221B;
-  --border: #2E3A32;
-  --shadow: 0 10px 30px rgba(0,0,0,0.36), 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-soft: 0 2px 10px rgba(0,0,0,0.3);
+  --green: #34D399;
+  --green-light: #6EE7B7;
+  --green-pale: #064E3B;
+  --amber: #FBBF24;
+  --ink: #F8FAFC;
+  --ink-mid: #CBD5E1;
+  --ink-light: #94A3B8;
+  --white: #0B0F19;
+  --paper: #030712;
+  --surface: rgba(11, 15, 25, 0.65);
+  --surface-soft: #0F172A;
+  --border: rgba(30, 41, 59, 0.7);
+  --shadow: 0 20px 50px rgba(0,0,0,0.45);
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.35);
 
-  /* Semantic status tokens — dark variants (dark-tinted bg, lighter fg) */
-  --success: #4DC275;
-  --success-bg: #16301F;
-  --success-fg: #8FE0AA;
-  --caution: #E0A93B;
-  --caution-bg: #332B12;
-  --caution-fg: #F2D38A;
-  --warning: #F0A04B;
-  --warning-bg: #33240F;
-  --warning-fg: #F5C28A;
-  --danger: #E5736F;
-  --danger-bg: #331717;
-  --danger-fg: #F0A8A5;
+  /* Semantic status tokens — dark variants */
+  --success: #34D399;
+  --success-bg: #064E3B;
+  --success-fg: #A7F3D0;
+  --caution: #FBBF24;
+  --caution-bg: #78350F;
+  --caution-fg: #FDE68A;
+  --warning: #FB923C;
+  --warning-bg: #7C2D12;
+  --warning-fg: #FED7AA;
+  --danger: #F87171;
+  --danger-bg: #7F1D1D;
+  --danger-fg: #FCA5A5;
 }
 [data-theme="dark"] body { transition: var(--transition-theme); }
 [data-theme="dark"] .navbar { background: #1A1A1A; border-bottom: 1px solid #2A2A2A; }
@@ -123,6 +125,20 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6, 
+.logo, 
+.subtitle, 
+.section-title, 
+.section-label, 
+.card-icon, 
+.stat-item, 
+.impact-number,
+.btn,
+.nav-cta {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.02em;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -146,18 +162,18 @@ a {
 .navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(16px) saturate(1.4);
-    -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     z-index: 1000;
     height: var(--nav-h);
     display: flex;
     align-items: center;
 }
 [data-theme="dark"] .navbar {
-    background: rgba(26, 26, 26, 0.88);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(11, 15, 25, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .nav-container {
     display: flex;
@@ -4261,3 +4277,163 @@ summary:focus-visible,
 .badge-pending { background: var(--warning-bg); color: var(--warning-fg); }
 .login-overlay { position: fixed; inset: 0; background: var(--paper); z-index: 1000; display: flex; align-items: center; justify-content: center; }
 .login-box { width: 100%; max-width: 400px; padding: 40px; text-align: center; }
+
+/* ── Interactive Stretched Card Clickability Overlays (UI/UX Pro Max) ──────── */
+.card:has(a),
+.resource-card:has(a),
+.story-card:has(button),
+.help-card:has(a) {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:has(a):hover,
+.resource-card:has(a):hover,
+.story-card:has(button):hover,
+.help-card:has(a):hover {
+    transform: translateY(-4px) scale(1.015);
+    border-color: var(--green);
+    box-shadow: var(--shadow);
+}
+
+.card:has(a) a::after,
+.resource-card:has(a) a::after,
+.story-card:has(button) button::after,
+.help-card:has(a) a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Ensure focus outline is still visible on the card container for keyboard accessibility */
+.card:has(a:focus-visible),
+.resource-card:has(a:focus-visible),
+.story-card:has(button:focus-visible),
+.help-card:has(a:focus-visible) {
+    outline: 2px solid var(--green-light);
+    outline-offset: 2px;
+}
+
+
+/* ── Glassmorphic Cards Redesign (UI/UX Pro Max) ───────────────────────────── */
+.card,
+.resource-card,
+.story-card,
+.help-card,
+.question-card,
+.scenario-card,
+.feature-card,
+.impact-card,
+.about-teaser,
+.step-card,
+.form-card,
+.admin-card {
+    background: var(--surface) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease, 
+                background-color 0.35s ease;
+}
+
+/* ── Interactive Card Clickability & Premium Hovers ────────────────────────── */
+.card:has(a),
+.resource-card:has(a),
+.story-card:has(button),
+.help-card:has(a),
+.scenario-card:has(a),
+.scenario-card:has(button) {
+    position: relative;
+    cursor: pointer;
+}
+
+.card:has(a):hover,
+.resource-card:has(a):hover,
+.story-card:has(button):hover,
+.help-card:has(a):hover,
+.scenario-card:has(a):hover,
+.scenario-card:has(button):hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    border-color: var(--green) !important;
+    box-shadow: 0 20px 40px rgba(5, 150, 105, 0.12), var(--shadow) !important;
+}
+
+[data-theme="dark"] .card:has(a):hover,
+[data-theme="dark"] .resource-card:has(a):hover,
+[data-theme="dark"] .story-card:has(button):hover,
+[data-theme="dark"] .help-card:has(a):hover,
+[data-theme="dark"] .scenario-card:has(a):hover,
+[data-theme="dark"] .scenario-card:has(button):hover {
+    border-color: var(--green-light) !important;
+    box-shadow: 0 20px 40px rgba(52, 211, 153, 0.15), var(--shadow) !important;
+}
+
+/* Stretched link overlay to make the whole card clickable */
+.card:has(a) a::after,
+.resource-card:has(a) a::after,
+.story-card:has(button) button::after,
+.help-card:has(a) a::after,
+.scenario-card:has(a) a::after,
+.scenario-card:has(button) button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Ensure focus outline is still visible on the card container for keyboard accessibility */
+.card:has(a:focus-visible),
+.resource-card:has(a:focus-visible),
+.story-card:has(button:focus-visible),
+.help-card:has(a:focus-visible),
+.scenario-card:has(a:focus-visible),
+.scenario-card:has(button:focus-visible) {
+    outline: 2px solid var(--green-light) !important;
+    outline-offset: 2px !important;
+}
+
+/* ── Premium Gradient Mesh Heroes (UI/UX Pro Max) ─────────────────────────── */
+.hero:not(.home-hero),
+.page-hero {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #064E3B 0%, #022C22 100%) !important;
+}
+
+[data-theme="dark"] .hero:not(.home-hero),
+[data-theme="dark"] .page-hero {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(52, 211, 147, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, #022C22 0%, #011C15 100%) !important;
+}
+
+.home-hero {
+    min-height: clamp(420px, 56vh, 520px);
+    display: flex;
+    align-items: center;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.15) 0%, transparent 60%),
+        linear-gradient(178deg, rgba(6, 78, 59, 0.75) 0%, rgba(2, 44, 34, 0.9) 100%),
+        url("../images/youth-tech.png") center 43% / cover no-repeat !important;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .home-hero {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.1) 0%, transparent 60%),
+        linear-gradient(178deg, rgba(2, 44, 34, 0.85) 0%, rgba(1, 28, 21, 0.95) 100%),
+        url("../images/youth-tech.png") center 43% / cover no-repeat !important;
+}
+
+
