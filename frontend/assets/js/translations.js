@@ -6,7 +6,7 @@ const translations = {
   "nav-resources": { "en": "Resources", "bn": "রিসোর্স" },
   "nav-learn": { "en": "Learn", "bn": "শিখুন" },
   "nav-about": { "en": "About", "bn": "আমাদের সম্পর্কে" },
-  "nav-contact": { "en": "Contact", "bn": "যোগাযোগ" },
+  "nav-contact": { "en": "Contact Us", "bn": "যোগাযোগ" },
   "nav-cta": { "en": "Request a Session", "bn": "সেশন অনুরোধ করুন" },
 
   // Hero Section
