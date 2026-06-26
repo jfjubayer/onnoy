@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
         navContainer.appendChild(hamburger);
     }
+    if (hamburger && !hamburger.innerHTML.trim()) {
+        hamburger.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+    }
 
     // 1. Inject Theme & Language Toggles into Navbar
     let navRight = document.querySelector('.nav-right');
@@ -182,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Subtle reveal animations
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const animatedElements = document.querySelectorAll(
-        '.fade-in, .card, .impact-card, .resource-card, .scenario-card, .story-card, .feature-card, .question-card, .about-teaser, .form-section, .step, .law-card, .law-concern-card, .law-provision'
+        '.fade-in, .card, .impact-card, .resource-card, .scenario-card, .story-card, .feature-card, .question-card, .about-teaser, .form-section, .step, .law-card, .law-concern-card, .law-provision, .module-shell, .module-content-card, .module-check, .module-form-card, .module-level-gate, .mission-card'
     );
 
     animatedElements.forEach((el, index) => {
