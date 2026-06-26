@@ -1,6 +1,3 @@
 {
-  "public": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/frontend/$1" }
-  ]
+  "outputDirectory": "frontend"
 }
