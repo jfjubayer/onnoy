@@ -152,49 +152,56 @@ const missions = {
   spotLie: {
     storageKey: 'onnoy_mission_spot_lie',
     title: 'Mission 1: Spot the Lie',
-    subtitle: 'Identify misinformation before it spreads.',
+    subtitle: 'Find five pieces of misinformation and show how you checked them.',
     prevHref: 'level-2-missions.html',
     nextHref: 'mission-scam-alert.html',
-    type: 'quiz',
-    scenario: 'A post says: “Nagad is shutting down tomorrow. Withdraw all money now. Share urgently.” It includes a screenshot but no source link.',
-    question: 'What is the safest judgment?',
-    options: [
-      ['Likely suspicious. Check trusted news and official sources before sharing.', true],
-      ['Definitely true because it sounds urgent.', false],
-      ['Share now and verify later.', false]
-    ]
+    type: 'form',
+    formAction: 'https://formspree.io/f/xwvyyoqr',
+    intro: 'Identify five pieces of misinformation. Upload your screenshots or PDFs in one place, then use numbered notes to explain each example.',
+    guidelineTitle: 'Spot the Lie Rules',
+    guidelineItems: [
+      'Acceptable evidence: screenshots, image files, PDFs, source links, or video links.',
+      'Submit screenshots/PDFs with the upload field. Paste video links and source links in the notes box.',
+      'In the notes box, number each example 1-5 and explain what claim you found, why it may be false, and how you checked it.',
+      'Hide private information before uploading. Do not submit passwords, OTPs, NID/card numbers, private messages, or harmful content.'
+    ],
+    notesPlaceholder: '1. Category: false claim / old image / edited screenshot / fake quote\nSource or video link:\nWhy it belongs here:\nHow I checked it:\n\n2. Category:\nSource or video link:\nWhy it belongs here:\nHow I checked it:'
   },
   scamAlert: {
     storageKey: 'onnoy_mission_scam_alert',
     title: 'Mission 2: Scam Alert',
-    subtitle: 'Identify and submit a scam for evaluation.',
+    subtitle: 'Find five scams or suspicious messages and show your evidence.',
     prevHref: 'mission-spot-the-lie.html',
     nextHref: 'mission-ai-integrity.html',
     type: 'form',
     formAction: 'https://formspree.io/f/xwvyyoqr',
-    intro: 'Submit a suspicious link, post, message, or scam pattern. Onnoy reviews submissions manually.',
-    fields: [
-      ['name', 'Your Name', 'text', false],
-      ['email', 'Your Email', 'email', true],
-      ['source', 'Where did you see it?', 'text', true],
-      ['link', 'Link or screenshot description', 'text', false],
-      ['content', 'Describe the scam', 'textarea', true]
-    ]
+    intro: 'Identify five scams, suspicious links, or suspicious messages. Upload your screenshots or PDFs in one place, then use numbered notes to explain each example.',
+    guidelineTitle: 'Scam Alert Rules',
+    guidelineItems: [
+      'Acceptable evidence: screenshots, image files, PDFs, suspicious links, message links, or video links.',
+      'Submit screenshots/PDFs with the upload field. Paste video links, website links, and message details in the notes box.',
+      'In the notes box, number each example 1-5 and explain the scam sign, what it asks people to do, and how you checked it.',
+      'Hide private information before uploading. Do not submit passwords, OTPs, NID/card numbers, payment details, private messages, or live scam credentials.'
+    ],
+    notesPlaceholder: '1. Category: fake offer / phishing link / impersonation / payment scam\nSource or video link:\nWhy it belongs here:\nHow I checked it:\n\n2. Category:\nSource or video link:\nWhy it belongs here:\nHow I checked it:'
   },
   aiIntegrity: {
     storageKey: 'onnoy_mission_ai_integrity',
     title: 'Mission 3: AI Integrity Check',
-    subtitle: 'Check whether an AI answer is reliable enough to use.',
+    subtitle: 'Find five AI-related misinformation examples and show your checks.',
     prevHref: 'mission-scam-alert.html',
     nextHref: 'mission-digital-guardian.html',
-    type: 'quiz',
-    scenario: 'An AI tool gives a quote, a statistic, and a website link for your assignment. The link does not open.',
-    question: 'What should you do?',
-    options: [
-      ['Treat it as unverified and find trustworthy sources yourself.', true],
-      ['Use it because AI usually knows.', false],
-      ['Remove the broken link but keep the quote.', false]
-    ]
+    type: 'form',
+    formAction: 'https://formspree.io/f/xwvyyoqr',
+    intro: 'Identify five AI-generated or AI-assisted misinformation examples. Upload your screenshots or PDFs in one place, then use numbered notes to explain each example.',
+    guidelineTitle: 'AI Integrity Check Rules',
+    guidelineItems: [
+      'Acceptable evidence: screenshots, image files, PDFs, AI output links, source links, or video links.',
+      'Submit screenshots/PDFs with the upload field. Paste video links and AI/source links in the notes box.',
+      'In the notes box, number each example 1-5 and explain whether it is AI-generated, AI-assisted, or AI-claimed, why it is risky, and how you verified it.',
+      'Hide private information before uploading. Do not submit passwords, OTPs, NID/card numbers, private chats, or harmful synthetic content.'
+    ],
+    notesPlaceholder: '1. Category: AI image / AI text / fake source / deepfake claim\nSource or video link:\nWhy it belongs here:\nHow I checked it:\n\n2. Category:\nSource or video link:\nWhy it belongs here:\nHow I checked it:'
   },
   guardian: {
     storageKey: 'onnoy_mission_guardian',
@@ -326,7 +333,7 @@ function renderMission() {
       <div class="module-kicker">Level 2</div>
       <h2>${mission.title}</h2>
       <p class="module-lead">${mission.subtitle}</p>
-      <div class="module-status-pill">${isComplete(mission.storageKey) ? 'Complete' : 'Manual review may still be required'}</div>
+      <div class="module-status-pill">${isComplete(mission.storageKey) ? 'Submitted for final review' : 'Manual review happens after all missions'}</div>
     </section>
   `;
 
@@ -391,22 +398,36 @@ function renderMission() {
 function buildMissionForm(mission, referralMode) {
   const section = document.createElement('section');
   section.className = 'module-form-card';
-  section.innerHTML = `<h3>Submit for Review</h3><p>${mission.intro || 'Send this to Onnoy for manual review.'}</p>`;
+  const guideline = mission.guidelineItems
+    ? `
+      <div class="mission-guidelines">
+        <h4>${mission.guidelineTitle || 'Mission Rules'}</h4>
+        <ul>${mission.guidelineItems.map((item) => `<li>${item}</li>`).join('')}</ul>
+      </div>
+    `
+    : '';
+  section.innerHTML = `<h3>Submit for Review</h3>${guideline}<p>${mission.intro || 'Send this to Onnoy for manual review.'}</p><p>Team Onnoy will manually review all mission submissions together at the end. You can continue to the next mission after submitting this form.</p>`;
   const form = document.createElement('form');
   form.action = mission.formAction;
   form.method = 'POST';
-  form.innerHTML = `<input type="hidden" name="_subject" value="${mission.title}">`;
-  mission.fields.forEach(([name, label, type, required]) => {
-    const group = document.createElement('div');
-    group.className = 'form-group';
-    if (type === 'textarea') {
-      group.innerHTML = `<label class="form-label" for="${name}">${label}${required ? ' *' : ''}</label><textarea class="form-control" id="${name}" name="${name}" rows="5" ${required ? 'required' : ''}></textarea>`;
-    } else {
-      group.innerHTML = `<label class="form-label" for="${name}">${label}${required ? ' *' : ''}</label><input class="form-control" id="${name}" name="${name}" type="${type}" ${required ? 'required' : ''}>`;
-    }
-    form.appendChild(group);
-  });
-  const buttonText = referralMode ? 'Submit Recognition Claim' : 'Submit Scam for Evaluation';
+  form.enctype = 'multipart/form-data';
+  form.innerHTML = `
+    <input type="hidden" name="_subject" value="${mission.title}">
+    <input type="hidden" name="mission_title" value="${mission.title}">
+    <div class="form-group"><label class="form-label" for="unique_id">Unique ID *</label><input class="form-control" id="unique_id" name="unique_id" required></div>
+    <div class="form-group"><label class="form-label" for="student_name">Name *</label><input class="form-control" id="student_name" name="student_name" required></div>
+    <div class="form-group"><label class="form-label" for="student_email">Email Address *</label><input class="form-control" id="student_email" name="student_email" type="email" required></div>
+    <div class="form-group">
+      <label class="form-label" for="evidence_files">Screenshots or PDF Files *</label>
+      <input class="form-control" id="evidence_files" name="evidence_files" type="file" accept="image/*,.pdf" multiple required>
+      <p class="mission-upload-help">Select all screenshots/images/PDFs for this mission at once. Video files are not accepted here; paste video links in the notes box.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="evidence_notes">Numbered Evidence Notes *</label>
+      <textarea class="form-control" id="evidence_notes" name="evidence_notes" rows="10" placeholder="${mission.notesPlaceholder || '1. Category:\nSource or video link:\nWhy it belongs here:\nHow I checked it:'}" required></textarea>
+    </div>
+  `;
+  const buttonText = referralMode ? 'Submit Recognition Claim' : 'Submit Mission for Review';
   form.innerHTML += `<button class="btn btn-green full-submit" type="submit">${buttonText} →</button>`;
   form.addEventListener('submit', () => setComplete(mission.storageKey));
   section.appendChild(form);
