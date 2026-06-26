@@ -3,28 +3,55 @@ const courseLessons = {
     storageKey: 'onnoy_lesson_overview',
     eyebrow: 'Digital Citizenship',
     title: 'Level 1: Digital Citizenship Course',
-    subtitle: 'A self-paced online lesson that replaces the live session and prepares students for Level 2 missions.',
+    subtitle: 'A colorful self-paced course that prepares students for safer, wiser, and more responsible digital life.',
     nextHref: 'module-attention-literacy.html',
+    callout: {
+      label: 'Course Map',
+      title: 'Five short lessons. One stronger digital mindset.',
+      body: 'Level 1 is not about memorizing rules. It helps students notice attention traps, verify information, avoid scams, use AI carefully, and build daily habits that protect judgment.'
+    },
+    activity: {
+      title: 'Try this before you start',
+      body: 'Write one sentence: "The online habit I most want to improve is..." Keep that answer in mind while moving through each lesson.'
+    },
     sections: [
       {
-        title: 'What Students Complete',
-        body: 'Level 1 has five pages: this overview, Attention Literacy, Misinformation, Scam Safety, and AI/Mindset. Each page ends with a small interactive check so students do more than read.',
-        points: ['Understand how apps shape attention.', 'Verify claims before sharing.', 'Recognize scams and harmful online activity.', 'Use AI with human judgment.', 'Build simple daily digital balance habits.']
+        label: '01',
+        title: 'What You Will Learn',
+        body: 'Level 1 covers the core digital citizenship skills students need before starting Level 2 missions.',
+        points: ['Attention Literacy: how apps, feeds, and algorithms compete for your time.', 'Misinformation: how to pause, verify, and avoid spreading false claims.', 'Scam Safety: how to spot phishing links, OTP traps, and fake offers.', 'AI and Mindset: how to use AI with human judgment, not blind trust.']
       },
       {
+        label: '02',
         title: 'How Level 2 Unlocks',
         body: 'After finishing all Level 1 checks in this browser, students can start Level 2 missions. Official recognition is still reviewed manually by Onnoy.',
         points: ['Mission 1: Spot the Lie.', 'Mission 2: Scam Alert.', 'Mission 3: AI Integrity Check.', 'Mission 4: Invite 1-5 acquaintances to complete the course.']
+      },
+      {
+        label: '03',
+        title: 'How Progress Works',
+        body: 'Progress is saved in this browser with localStorage. Use the same browser and device if you want the Level 2 gate to remember your progress.',
+        points: ['Each page has a mini-activity and a quiz.', 'All quiz questions must be correct to complete the page.', 'If progress disappears, revisit each lesson and complete the quiz again.']
       }
     ],
-    check: {
-      question: 'What is the goal of Level 1?',
-      options: [
-        ['To replace the live session with an online course', true],
-        ['To collect social media passwords', false],
-        ['To make students stop using the internet', false]
-      ]
-    }
+    checks: [
+      {
+        question: 'What is the main goal of Level 1?',
+        options: [
+          ['Build safer digital habits and prepare for Level 2 missions', true],
+          ['Collect social media passwords', false],
+          ['Make students stop using the internet forever', false]
+        ]
+      },
+      {
+        question: 'When does Level 2 unlock in this browser?',
+        options: [
+          ['After all five Level 1 pages are completed', true],
+          ['After opening only the overview page', false],
+          ['After submitting a contact form', false]
+        ]
+      }
+    ]
   },
   attention: {
     storageKey: 'onnoy_lesson_attention',
@@ -35,26 +62,61 @@ const courseLessons = {
     nextHref: 'module-misinformation.html',
     image: 'assets/images/modules/algorithm-loop.png',
     imageAlt: 'Algorithm loop showing view tracking, emotion prediction, personalized content, and infinite scroll.',
+    callout: {
+      label: 'Attention Budget',
+      title: 'Your attention is limited, valuable, and trainable.',
+      body: 'This module shows a lifetime as 80 blocks. A typical person may spend about 16.7 years on screens. Reclaiming even 2 hours a day can return years of meaningful waking life.'
+    },
+    activity: {
+      title: 'Try this now',
+      body: 'Open your phone screen-time report. Notice your top app from yesterday. Ask: "Did I choose this time, or did the feed choose it for me?"'
+    },
     sections: [
       {
+        label: '01',
         title: 'Your Attention Has a Budget',
-        body: 'One slide shows life as 80 blocks. A typical person may spend about 16.7 years on screens. Reclaiming even 2 hours each day can return years of useful waking life.',
-        points: ['Check whether your phone was the first thing you touched today.', 'Notice when a 10-minute break becomes 30 minutes.', 'Treat attention like time, money, and health.']
+        body: 'This lesson frames life as 80 blocks. A typical person may spend about 16.7 years on screens. Reclaiming even 2 hours each day can return years of useful waking life.',
+        points: ['Ask if your phone was the first thing you touched today.', 'Notice when a 10-minute break becomes 30 minutes.', 'Treat attention like time, money, and health.']
       },
       {
+        label: '02',
+        title: 'The Late-Night Loop',
+        body: 'A common pattern starts with "one quick reel" at night and ends much later with tired eyes and lost sleep. This is not only a willpower issue; the product is built to keep attention moving.',
+        points: ['Autoplay removes stopping points.', 'Infinite scroll hides how much time passed.', 'Emotional posts make the next tap feel urgent.']
+      },
+      {
+        label: '03',
         title: 'The Algorithm Is Doing Its Job',
         body: 'Feeds track what you watch, predict emotion, and show more of what keeps you scrolling. This is why doomscrolling is a design outcome, not only a willpower problem.',
         points: ['Tap Not Interested on low-value posts.', 'Search intentionally for skills and learning.', 'Follow creators who improve your life.']
       }
     ],
-    check: {
-      question: 'Which habit trains your feed in a healthier direction?',
-      options: [
-        ['Searching for topics you want to learn', true],
-        ['Opening every shocking post immediately', false],
-        ['Scrolling until you feel tired', false]
-      ]
-    }
+    checks: [
+      {
+        question: 'Which habit trains your feed in a healthier direction?',
+        options: [
+          ['Searching for topics you want to learn', true],
+          ['Opening every shocking post immediately', false],
+          ['Scrolling until you feel tired', false]
+        ]
+      },
+      {
+        question: 'What makes infinite scroll risky?',
+        options: [
+          ['It removes natural stopping points', true],
+          ['It blocks all videos', false],
+          ['It always improves sleep', false]
+        ]
+      },
+      {
+        question: 'What is a good first step when your phone use feels automatic?',
+        options: [
+          ['Pause and ask why you picked it up', true],
+          ['Open more apps quickly', false],
+          ['Ignore screen-time patterns', false]
+        ]
+      }
+    ]
   },
   misinformation: {
     storageKey: 'onnoy_lesson_misinformation',
@@ -65,26 +127,61 @@ const courseLessons = {
     nextHref: 'module-scam-safety.html',
     image: 'assets/images/modules/sift.png',
     imageAlt: 'SIFT fact-checking framework: Stop, Investigate, Find Better, Trace.',
+    callout: {
+      label: 'Before You Share',
+      title: 'Strong emotion is a warning light.',
+      body: 'Fear, anger, and excitement can push people to share too fast. SIFT gives students a short routine: Stop, Investigate, Find better coverage, and Trace the claim.'
+    },
+    activity: {
+      title: 'Try this now',
+      body: 'Think of one viral post you saw this week. Name the claim, the source, and one better place you could check it before sharing.'
+    },
     sections: [
       {
+        label: '01',
         title: 'Misinformation vs Disinformation',
         body: 'Misinformation is false information shared unknowingly. Disinformation is false information created to deceive, manipulate, or harm.',
         points: ['A fake remedy shared by a helpful friend is misinformation.', 'A fake news screenshot designed to trigger panic is disinformation.', 'Both can hurt real people.']
       },
       {
+        label: '02',
+        title: 'Why False News Moves Fast',
+        body: 'False claims often travel quickly because they fit echo chambers and trigger outrage. Algorithms may reward posts that create strong reactions, even when the claim is weak.',
+        points: ['Old photos can be reused as new events.', 'Edited screenshots can look official.', 'Local names and places can be added to foreign videos.']
+      },
+      {
+        label: '03',
         title: 'Use SIFT',
         body: 'Pause when a post creates fear, anger, or excitement. Then check source credibility, find better coverage, and trace the claim back to its original context.',
         points: ['Read past the headline.', 'Check dates and locations.', 'Watch for fake URLs and edited screenshots.']
       }
     ],
-    check: {
-      question: 'What should you do first when a post makes you angry or scared?',
-      options: [
-        ['Stop before sharing', true],
-        ['Forward it with a question mark', false],
-        ['Argue in comments immediately', false]
-      ]
-    }
+    checks: [
+      {
+        question: 'What should you do first when a post makes you angry or scared?',
+        options: [
+          ['Stop before sharing', true],
+          ['Forward it with a question mark', false],
+          ['Argue in comments immediately', false]
+        ]
+      },
+      {
+        question: 'What is disinformation?',
+        options: [
+          ['False information created to deceive or harm', true],
+          ['Any post with a long caption', false],
+          ['A true story from a newspaper', false]
+        ]
+      },
+      {
+        question: 'Which action is part of SIFT?',
+        options: [
+          ['Trace the claim to its original context', true],
+          ['Share first and check later', false],
+          ['Trust the headline only', false]
+        ]
+      }
+    ]
   },
   scams: {
     storageKey: 'onnoy_lesson_scams',
@@ -95,26 +192,61 @@ const courseLessons = {
     nextHref: 'module-ai-mindset.html',
     image: 'assets/images/modules/fake-link.png',
     imageAlt: 'Real link versus fake link comparison with misspellings and suspicious domains.',
+    callout: {
+      label: '5-Second Rule',
+      title: 'Scams rush you so you skip thinking.',
+      body: 'Urgency, fear, free rewards, and fake authority are common scam triggers. A five-second pause can stop a stolen account, lost money, or leaked OTP.'
+    },
+    activity: {
+      title: 'Try this now',
+      body: 'Look at a recent promotional message. Before clicking, identify the real domain, the sender, and what the message wants you to do.'
+    },
     sections: [
       {
+        label: '01',
         title: 'Scams Use Emotion',
         body: 'Scammers push urgency, panic, free rewards, and fake authority. The Free Fire diamond example shows how a fake login page can steal an account.',
         points: ['Do not enter passwords after clicking reward links.', 'Never share OTP codes.', 'Call a friend directly before sending money.']
       },
       {
+        label: '02',
         title: 'Look Closely at Links',
         body: 'Fake links often use misspellings, number substitutions, suspicious subdomains, or copied designs. A site can look real and still be dangerous.',
         points: ['Check the real domain, not only the page design.', 'Avoid unsafe APKs and game mods.', 'Use 2FA on important accounts.']
+      },
+      {
+        label: '03',
+        title: 'Common Digital Hijacks',
+        body: 'Many scams are simple social tricks. A hacked friend may ask for urgent money, a fake support page may ask for login details, or an unsafe APK may steal files.',
+        points: ['No bank or company should ask for your OTP.', 'Verify money requests through a direct call.', 'Do not install game mods from unknown sources.']
       }
     ],
-    check: {
-      question: 'A friend messages “Claim 5,000 diamonds free” and asks you to log in. Best response?',
-      options: [
-        ['Do not log in; verify with the friend directly', true],
-        ['Enter your password quickly before offer ends', false],
-        ['Share the link with classmates', false]
-      ]
-    }
+    checks: [
+      {
+        question: 'A friend messages "Claim 5,000 diamonds free" and asks you to log in. Best response?',
+        options: [
+          ['Do not log in; verify with the friend directly', true],
+          ['Enter your password quickly before offer ends', false],
+          ['Share the link with classmates', false]
+        ]
+      },
+      {
+        question: 'Which link sign is suspicious?',
+        options: [
+          ['Misspellings or number substitutions in the domain', true],
+          ['A familiar color scheme', false],
+          ['A short paragraph on the page', false]
+        ]
+      },
+      {
+        question: 'What should you do with an OTP?',
+        options: [
+          ['Keep it private and never share it', true],
+          ['Send it to anyone who says they are support', false],
+          ['Post it in a group chat', false]
+        ]
+      }
+    ]
   },
   ai: {
     storageKey: 'onnoy_lesson_ai',
@@ -125,26 +257,61 @@ const courseLessons = {
     nextHref: 'level-2-missions.html',
     image: 'assets/images/modules/ai-dark-side.png',
     imageAlt: 'Helpful and harmful AI examples including education, deepfakes, misinformation, bias, and overdependence.',
+    callout: {
+      label: 'Human Judgment',
+      title: 'AI can help. Humans remain responsible.',
+      body: 'AI predicts patterns from data. It can draft, summarize, and translate, but it can also invent facts, mirror bias, and produce convincing misinformation.'
+    },
+    activity: {
+      title: 'Try this now',
+      body: 'Ask an AI tool for a factual answer, then verify that answer with one trusted source. Notice whether the AI gave evidence or only sounded confident.'
+    },
     sections: [
       {
+        label: '01',
         title: 'AI Predicts, It Does Not Know',
         body: 'AI can summarize, translate, recognize patterns, and generate drafts. It can also hallucinate facts, invent sources, mirror bias, and sound confident when wrong.',
         points: ['Verify important facts outside AI.', 'Use AI for drafts, not final judgment.', 'Watch for deepfakes and manipulated media.']
       },
       {
+        label: '02',
+        title: 'Helpful and Harmful Uses',
+        body: 'AI can support education, translation, accessibility, diagnosis, and flood prediction. The same technology can also create deepfakes, fake images, biased decisions, and manipulation.',
+        points: ['Ask what the AI output is based on.', 'Check whether people may be harmed by sharing it.', 'Use AI to support thinking, not replace it.']
+      },
+      {
+        label: '03',
         title: 'Critical Thinking Is the Core Skill',
         body: 'Critical thinking means asking questions, checking evidence, and thinking before reacting. Daily habits like the First 10 Rule protect attention and judgment.',
         points: ['No phone for the first 10 minutes after waking.', 'Question quick answers and trends.', 'Keep real-life offline activities in your week.']
       }
     ],
-    check: {
-      question: 'What is safest when AI gives an important fact?',
-      options: [
-        ['Verify it with trusted sources', true],
-        ['Trust it because it sounds confident', false],
-        ['Share it before checking', false]
-      ]
-    }
+    checks: [
+      {
+        question: 'What is safest when AI gives an important fact?',
+        options: [
+          ['Verify it with trusted sources', true],
+          ['Trust it because it sounds confident', false],
+          ['Share it before checking', false]
+        ]
+      },
+      {
+        question: 'What is an AI hallucination?',
+        options: [
+          ['A confident answer that includes false or invented information', true],
+          ['A verified source list from a library', false],
+          ['A phone notification sound', false]
+        ]
+      },
+      {
+        question: 'What is the best role for AI in student work?',
+        options: [
+          ['Helper for drafts and ideas, with human checking', true],
+          ['Replacement for all judgment', false],
+          ['Source that never needs verification', false]
+        ]
+      }
+    ]
   }
 };
 
@@ -242,17 +409,31 @@ function renderLesson() {
   const status = isComplete(lesson.storageKey) ? 'Complete' : 'Not complete';
   root.innerHTML = `
     <section class="module-shell">
-      <div class="module-kicker">${lesson.eyebrow}</div>
-      <h2>${lesson.title}</h2>
-      <p class="module-lead">${lesson.subtitle}</p>
+      <div>
+        <div class="module-kicker">${lesson.eyebrow}</div>
+        <h2>${lesson.title}</h2>
+        <p class="module-lead">${lesson.subtitle}</p>
+      </div>
       <div class="module-status-pill">${status}</div>
     </section>
   `;
+
+  if (lesson.callout) {
+    const callout = document.createElement('section');
+    callout.className = 'module-callout';
+    callout.innerHTML = `
+      <div class="module-callout-label">${lesson.callout.label}</div>
+      <h3>${lesson.callout.title}</h3>
+      <p>${lesson.callout.body}</p>
+    `;
+    root.appendChild(callout);
+  }
 
   lesson.sections.forEach((section) => {
     const block = document.createElement('section');
     block.className = 'module-content-card';
     block.innerHTML = `
+      <div class="module-section-label">${section.label || ''}</div>
       <h3>${section.title}</h3>
       <p>${section.body}</p>
       <ul>${section.points.map((point) => `<li>${point}</li>`).join('')}</ul>
@@ -267,27 +448,73 @@ function renderLesson() {
     root.appendChild(figure);
   }
 
+  if (lesson.activity) {
+    const activity = document.createElement('section');
+    activity.className = 'module-activity';
+    activity.innerHTML = `
+      <div class="module-activity-icon" aria-hidden="true">?</div>
+      <div>
+        <h3>${lesson.activity.title}</h3>
+        <p>${lesson.activity.body}</p>
+      </div>
+    `;
+    root.appendChild(activity);
+  }
+
   const check = document.createElement('section');
   check.className = 'module-check';
-  check.innerHTML = `<h3>Quick Check</h3><p>${lesson.check.question}</p><div class="module-options"></div><p class="module-feedback" aria-live="polite"></p>`;
-  const options = check.querySelector('.module-options');
+  const checks = lesson.checks || [lesson.check];
+  const answered = new Set();
+  check.innerHTML = `<h3>Quick Check</h3><p>Answer all questions correctly to complete this lesson.</p><div class="module-quiz"></div><p class="module-feedback" aria-live="polite"></p>`;
+  const quiz = check.querySelector('.module-quiz');
   const feedback = check.querySelector('.module-feedback');
-  lesson.check.options.forEach(([text, correct]) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.textContent = text;
-    button.addEventListener('click', () => {
-      if (!correct) {
-        feedback.textContent = 'Try again. Pause and choose the safest digital habit.';
-        feedback.className = 'module-feedback danger';
-        return;
-      }
-      setComplete(lesson.storageKey);
-      feedback.textContent = 'Completed. Progress saved in this browser.';
-      feedback.className = 'module-feedback success';
-      check.querySelectorAll('button').forEach((btn) => (btn.disabled = true));
+
+  checks.forEach((item, index) => {
+    const question = document.createElement('div');
+    question.className = 'module-quiz-question';
+    question.innerHTML = `
+      <p class="module-question-text">${index + 1}. ${item.question}</p>
+      <div class="module-options"></div>
+    `;
+    const options = question.querySelector('.module-options');
+
+    item.options.forEach(([text, correct]) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = text;
+      button.addEventListener('click', () => {
+        question.querySelectorAll('button').forEach((btn) => {
+          btn.classList.remove('is-correct', 'is-wrong');
+        });
+
+        if (!correct) {
+          button.classList.add('is-wrong');
+          feedback.textContent = 'Try again. Pause, reread the lesson, and choose the safest answer.';
+          feedback.className = 'module-feedback danger';
+          return;
+        }
+
+        button.classList.add('is-correct');
+        answered.add(index);
+        question.querySelectorAll('button').forEach((btn) => {
+          btn.disabled = true;
+        });
+
+        if (answered.size === checks.length) {
+          setComplete(lesson.storageKey);
+          feedback.textContent = 'Completed. Progress saved in this browser.';
+          feedback.className = 'module-feedback success';
+          root.querySelector('.module-status-pill').textContent = 'Complete';
+          return;
+        }
+
+        feedback.textContent = `${answered.size} of ${checks.length} correct. Keep going.`;
+        feedback.className = 'module-feedback success';
+      });
+      options.appendChild(button);
     });
-    options.appendChild(button);
+
+    quiz.appendChild(question);
   });
   root.appendChild(check);
   root.appendChild(buildPageNav(lesson.prevHref, lesson.nextHref));
