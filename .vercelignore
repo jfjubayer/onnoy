@@ -1,0 +1,5 @@
+backend/
+add-module/
+.agent/
+design-system/
+vercel-cli-temp/
