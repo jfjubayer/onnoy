@@ -17,7 +17,7 @@ cd frontend && python3 -m http.server 8000        # → http://localhost:8000
 # Backend (Flask API)
 cd backend && python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-python3 app.py                                     # → http://localhost:5000/api/health
+python3 app.py                                     # → http://localhost:5001/api/health
 ```
 
 Backend reads a gitignored `.env` from the **repo root** (`SECRET_KEY`, `ADMIN_TOKEN`; both have insecure dev defaults in `backend/config.py`).
@@ -35,7 +35,7 @@ Backend reads a gitignored `.env` from the **repo root** (`SECRET_KEY`, `ADMIN_T
 Two unrelated data paths — do not confuse them:
 
 - **Public forms** (contact, support, session-request, fact-check, facilitator-guide) POST to **Formspree** (`https://formspree.io/f/...`), *not* to Flask.
-- **The Flask API** is consumed only by `frontend/admin.html`, which fetches `http://localhost:5000/api`, stores the admin token in `localStorage`, and is the only client of `/api/requests` and `/api/factchecks`.
+- **The Flask API** is consumed only by `frontend/admin.html`, which fetches `http://localhost:5001/api`, stores the admin token in `localStorage`, and is the only client of `/api/requests` and `/api/factchecks`.
 
 When editing a form's submission target, first determine which path it belongs to.
 

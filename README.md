@@ -22,7 +22,7 @@ cd backend
 source venv/bin/activate
 python3 app.py
 ```
-Visit API: http://localhost:5000/api/health
+Visit API: http://localhost:5001/api/health
 
 ## Deployment
 - **Frontend**: Automatically deployed to Vercel (Root: `/frontend`).

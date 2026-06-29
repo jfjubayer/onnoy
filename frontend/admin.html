@@ -48,7 +48,7 @@
             if (stored) return stored;
             const { protocol, hostname } = window.location;
             const origin = protocol === 'file:' ? 'http://localhost' : `${protocol}//${hostname}`;
-            return `${origin}:5000/api`;
+            return `${origin}:5001/api`;
         })();
 
         async function fetchJson(url, options = {}) {

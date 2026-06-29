@@ -11,19 +11,31 @@ const translations = {
 
   // Hero Section
   "hero-title": { 
-    "en": "Ethical Use of Technology", 
-    "bn": "প্রযুক্তির নৈতিক ব্যবহার" 
+    "en": "Building Responsible Digital Citizens", 
+    "bn": "দায়িত্বশীল ডিজিটাল নাগরিক গড়ে তোলা" 
   },
-  "hero-subtitle": { 
-    "en": "Onnoy — Connecting necessary dots", 
-    "bn": "অন্বয় — প্রয়োজনীয় বিন্দুগুলি সংযুক্ত করা" 
+  "hero-brand": {
+    "en": "Onnoy - অন্বয়",
+    "bn": "অন্বয় - Onnoy"
+  },
+  "hero-tagline": {
+    "en": "A Responsible Digital Youth Initiative",
+    "bn": "একটি দায়িত্বশীল ডিজিটাল যুব উদ্যোগ"
   },
   "hero-p": { 
     "en": "A youth-led initiative in Mymensingh, Bangladesh. We teach students how to use technology responsibly, ethically, and safely.", 
     "bn": "ময়মনসিংহ, বাংলাদেশের একটি যুব-নেতৃত্বাধীন উদ্যোগ। আমরা শিক্ষার্থীদের শেখাই কীভাবে দায়িত্বশীল, নৈতিক এবং নিরাপদভাবে প্রযুক্তি ব্যবহার করতে হয়।" 
   },
-  "btn-start": { "en": "Start Learning →", "bn": "শেখা শুরু করুন →" },
+  "hero-quiz-question": {
+    "en": "Are you a responsible digital citizen?",
+    "bn": "আপনি কি একজন দায়িত্বশীল ডিজিটাল নাগরিক?"
+  },
+  "btn-start": { "en": "Explore the Modules →", "bn": "মডিউলগুলো দেখুন →" },
   "btn-quiz": { "en": "Take the Quiz", "bn": "কুইজে অংশ নিন" },
+  "stat-assessment": { "en": "Self Assessment", "bn": "স্ব-মূল্যায়ন" },
+  "stat-modules": { "en": "4 Modules", "bn": "৪টি মডিউল" },
+  "stat-missions": { "en": "4 Missions", "bn": "৪টি মিশন" },
+  "stat-badges": { "en": "3 Badges", "bn": "৩টি ব্যাজ" },
 
   // FAQ Page
   "faq-title": { "en": "Frequently Asked Questions", "bn": "সাধারণ প্রশ্নোত্তর" },
@@ -52,14 +64,25 @@ const translations = {
 
   // Impact Section
   "impact-title": { "en": "Our Impact", "bn": "আমাদের প্রভাব" },
-  "impact-sessions": { "en": "Sessions Conducted", "bn": "সম্পন্ন সেশন" },
+  "impact-sessions": { "en": "Sessions & Discussions", "bn": "সেশন এবং আলোচনা" },
   "impact-students": { "en": "Students Reached", "bn": "শিক্ষার্থী সংখ্যা" },
-  "impact-districts": { "en": "Districts Covered", "bn": "জেলা সমূহ" },
-  "impact-satisfaction": { "en": "Positive Feedback", "bn": "ইতিবাচক প্রতিক্রিয়া" },
+  "impact-citizens": { "en": "Informed Citizens", "bn": "অবহিত নাগরিক" },
+  "impact-guardians": { "en": "Guardians", "bn": "অভিভাবক" },
+  "impact-note": {
+    "en": "Numbers updated after every session. Last updated: June 2026.",
+    "bn": "প্রতিটি সেশনের পর সংখ্যা আপডেট করা হয়। সর্বশেষ আপডেট: জুন ২০২৬।"
+  },
+  "about-title-sub": { "en": "We Are", "bn": "আমরা হলাম" },
+  "about-title-main": { "en": "Onnoy - অন্বয়", "bn": "অন্বয় - Onnoy" },
+  "about-p": {
+    "en": "Empowering Bangladesh's youth to think critically, use technology responsibly, and shape a safer, more resilient digital future for Bangladesh.",
+    "bn": "বাংলাদেশের যুবসমাজকে যুক্তিযুক্তভাবে চিন্তা করতে, প্রযুক্তির দায়িত্বশীল ব্যবহার করতে এবং বাংলাদেশের জন্য একটি নিরাপদ ও স্থিতিস্থাপক ডিজিটাল ভবিষ্যৎ গড়ে তুলতে ক্ষমতায়ন করা।"
+  },
 
   // Footer
-  "footer-tagline": { "en": "Onnoy-অন্বয় | Connecting necessary dots", "bn": "Onnoy-অন্বয় | প্রয়োজনীয় বিন্দুগুলি সংযুক্ত করা" },
-  "footer-address": { "en": "Mymensingh, Bangladesh · Ethical Use of Technology Program", "bn": "ময়মনসিংহ, বাংলাদেশ · প্রযুক্তির নৈতিক ব্যবহার কার্যক্রম" },
+  "footer-tagline": { "en": "Onnoy - অন্বয় | Connecting Necessary Dots...", "bn": "Onnoy - অন্বয় | প্রয়োজনীয় বিন্দুগুলি সংযুক্ত করা..." },
+  "footer-address": { "en": "A Responsible Digital Youth Initiative", "bn": "একটি দায়িত্বশীল ডিজিটাল যুব উদ্যোগ" },
+  "footer-location": { "en": "Mymensingh, Bangladesh", "bn": "ময়মনসিংহ, বাংলাদেশ" },
   "modules-title": { "en": "Learning Modules", "bn": "লার্নিং মডিউল" },
   "modules-subtitle": { "en": "Step-by-step guides to digital responsibility", "bn": "ডিজিটাল দায়িত্বশীলতার ধাপে ধাপে নির্দেশিকা" },
   "res-title": { "en": "Resources", "bn": "রিসোর্স" },

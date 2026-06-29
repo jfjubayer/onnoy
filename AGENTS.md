@@ -34,7 +34,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python3 app.py
 ```
-Visit API: http://localhost:5000/api/health
+Visit API: http://localhost:5001/api/health
 
 **Backend expects `.env` in repo root** (gitignored). Required keys:
 - `SECRET_KEY` — Flask secret (defaults to insecure dev value)
@@ -65,7 +65,7 @@ Visit API: http://localhost:5000/api/health
 ## Important Frontend-Backend Split
 
 - **Public-facing forms** (contact, support, session request, fact-check, facilitator guide) submit to **Formspree** URLs (`https://formspree.io/f/...`), **not** to the Flask backend.
-- The backend's `/api/requests` and `/api/factchecks` endpoints are used only by the **admin dashboard** (`frontend/admin.html`), which fetches from `http://localhost:5000/api` and stores the token in `localStorage`.
+- The backend's `/api/requests` and `/api/factchecks` endpoints are used only by the **admin dashboard** (`frontend/admin.html`), which fetches from `http://localhost:5001/api` and stores the token in `localStorage`.
 - If you modify form endpoints, verify whether the change is meant for Formspree or the Flask API.
 
 ## Code Conventions
